@@ -1,80 +1,109 @@
 backend:
   name: git-gateway
-  branch: main # Ana dalınızın 'main' olduğundan emin olun!
-  
-  # Auth0 / OpenID Connect Ayarları KALDIRILDI
-  # base_url, auth_url, app_id gibi satırları SİLİN.
+  branch: main
 
-# CRITICAL: Diğer zorunlu alanlar aynı kalır
+  # Auth0 Giriş Ayarları
+  base_url: https://ephemeral-brigadeiros-3e1020.netlify.app
+  auth_url: https://dev-y5gvcrhgfsyrvu0n.us.auth0.com/authorize
+  app_id: "lzqHCZcz7lClbTYaqEa22Vfyd6gS5hRd"
+
 publish_mode: editorial_workflow
+
 media_folder: "assets/img/uploads"
 public_folder: "/assets/img/uploads"
 
+media_library:
+  name: uploadcare
+  config:
+    publicKey: "demopublickey"
+
 collections:
-  # 1. DUYURULAR YÖNETİMİ
+
+  # -------------------------
+  # 📢 DUYURULAR
+  # -------------------------
   - name: "announcements"
     label: "📢 Güncel Duyurular"
-    folder: "_announcements" 
+    folder: "_announcements"
     create: true
     delete: true
     fields:
-      - {label: "Başlık", name: "title", widget: "string", required: true}
-      - {label: "Özet Metin (Ana Sayfa)", name: "summary", widget: "text"}
-      - {label: "Yayın Tarihi", name: "date", widget: "datetime"}
-      - {label: "Detaylı İçerik", name: "body", widget: "markdown"}
-      - {label: "Kapak Görseli", name: "image", widget: "image", required: false}
-      - {label: "Ek Dosya (PDF/Word)", name: "file_attachment", widget: "file", required: false, allow_multiple: false}
-  
-  # 2. FİYATLANDIRMA YÖNETİMİ
+      - { label: "Başlık", name: "title", widget: "string", required: true }
+      - { label: "Özet Metin (Ana Sayfa)", name: "summary", widget: "text" }
+      - { label: "Yayın Tarihi", name: "date", widget: "datetime" }
+      - { label: "Detaylı İçerik", name: "body", widget: "markdown" }
+      - { label: "Kapak Görseli", name: "image", widget: "image", required: false }
+      - { label: "Ek Dosya (PDF/Word)", name: "file_attachment", widget: "file", required: false, allow_multiple: false }
+
+  # -------------------------
+  # 💰 FİYATLANDIRMA
+  # -------------------------
   - name: "pricing"
     label: "💰 Fiyatlandırma Paketleri"
-    folder: "_data" 
-    create: false 
+    folder: "_data"
+    create: false
     delete: false
     format: json
+
     files:
       - label: "Paket Fiyatlarını Yönet"
         name: "packages"
         file: "_data/packages.json"
         fields:
-          # --- BRONZE PAKET ---
+
+          # BRONZE
           - label: "Bronze Paket Adı"
             name: "bronze_name"
             widget: "string"
             default: "Temel Liman Paketi (Bronze)"
-          - label: "Bronze Paket Fiyatı (Sadece Rakam, Örn: 1.500)"
+
+          - label: "Bronze Paket Fiyatı"
             name: "bronze_price"
             widget: "string"
             default: "1.500"
+
           - label: "Bronze Paket Özellikleri (Liste)"
             name: "bronze_features"
             widget: "list"
-            field: {label: "Özellik Maddesi", name: "feature_item", widget: "string"}
+            field:
+              label: "Özellik Maddesi"
+              name: "feature_item"
+              widget: "string"
 
-          # --- SILVER PAKET ---
+          # SILVER
           - label: "Silver Paket Adı"
             name: "silver_name"
             widget: "string"
             default: "Kapsamlı Operasyon Paketi (Silver)"
-          - label: "Silver Paket Fiyatı (Sadece Rakam, Örn: 2.800)"
+
+          - label: "Silver Paket Fiyatı"
             name: "silver_price"
             widget: "string"
             default: "2.800"
+
           - label: "Silver Paket Özellikleri (Liste)"
             name: "silver_features"
             widget: "list"
-            field: {label: "Özellik Maddesi", name: "feature_item", widget: "string"}
+            field:
+              label: "Özellik Maddesi"
+              name: "feature_item"
+              widget: "string"
 
-          # --- GOLD PAKET ---
+          # GOLD
           - label: "Gold Paket Adı"
             name: "gold_name"
             widget: "string"
             default: "Premium Tam Destek Paketi (Gold)"
-          - label: "Gold Paket Fiyatı (Sadece Rakam, Örn: 4.500)"
+
+          - label: "Gold Paket Fiyatı"
             name: "gold_price"
             widget: "string"
             default: "4.500"
+
           - label: "Gold Paket Özellikleri (Liste)"
             name: "gold_features"
             widget: "list"
-            field: {label: "Özellik Maddesi", name: "feature_item", widget: "string"}
+            field:
+              label: "Özellik Maddesi"
+              name: "feature_item"
+              widget: "string"
