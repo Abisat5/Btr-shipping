@@ -2,6 +2,7 @@ backend:
   name: github
   repo: abisat5/Btr-shipping
   branch: main
+  client_id: "Ov23liUvKBE0rQIx5H6j"
 
 media_folder: "static/uploads"
 public_folder: "/static/uploads"
