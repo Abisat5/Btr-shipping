@@ -1,21 +1,12 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Abisat5/Btr-shipping
   branch: main
 
-  # Auth0 Giriş Ayarları
-  base_url: https://ephemeral-brigadeiros-3e1020.netlify.app
-  auth_url: https://dev-y5gvcrhgfsyrvu0n.us.auth0.com/authorize
-  app_id: "lzqHCZcz7lClbTYaqEa22Vfyd6gS5hRd"
-# İndex.html ile config.yml net olarak aynı sayfada bulunma zorunluluğu mevcut
+media_folder: "static/uploads"
+public_folder: "/static/uploads"
+
 publish_mode: editorial_workflow
-
-media_folder: "assets/img/uploads"
-public_folder: "/assets/img/uploads"
-
-media_library:
-  name: uploadcare
-  config:
-    publicKey: "demopublickey"
 
 collections:
 
