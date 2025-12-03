@@ -1,12 +1,11 @@
 backend:
   name: git-gateway
-  branch: main 
+  branch: main # Ana dalınızın 'main' olduğundan emin olun!
   
-  # Auth0 / OpenID Connect Ayarları (Giriş için Zorunlu)
-  base_url: https://ephemeral-brigadeiros-3e1020.netlify.app 
-  auth_url: https://dev-y5gvcrhgfsyrvu0n.us.auth0.com/authorize 
-  app_id: "lzqHCZcz7lClbTYaqEa22Vfyd6gS5hRd" # Client ID
-  
+  # Auth0 / OpenID Connect Ayarları KALDIRILDI
+  # base_url, auth_url, app_id gibi satırları SİLİN.
+
+# CRITICAL: Diğer zorunlu alanlar aynı kalır
 publish_mode: editorial_workflow
 media_folder: "assets/img/uploads"
 public_folder: "/assets/img/uploads"
