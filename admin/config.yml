@@ -1,16 +1,24 @@
 backend:
+  # Netlify CMS'in Auth0 üzerinden yetkilendirmesi için gereklidir.
   name: git-gateway
   branch: main # Ana dalınızın 'main' olduğundan emin olun!
+  
+  # --- AUTH0 / OpenID Connect AYARLARI ---
+  base_url: https://ephemeral-brigadeiros-3e1020.netlify.app # Sitenizin canlı URL'si
+  auth_url: https://[AUTH0 DOMAIN ADINIZ]/authorize # Örn: https://dev-xyz.auth0.com/authorize
+  base_url: https://[AUTH0 DOMAIN ADINIZ] # Örn: https://dev-xyz.auth0.com
+  app_id: "[AUTH0 CLIENT ID'NİZİ BURAYA YAZIN]" # Auth0 uygulamanızın Client ID'si
+  # --- AUTH0 AYARLARI SONU ---
 
-publish_mode: editorial_workflow # İçeriği yayımlamadan önce taslak olarak kaydetmenizi sağlar
-media_folder: "assets/img/uploads" # Yüklenen resimlerin kaydedileceği yer
-public_folder: "/assets/img/uploads" # Resimlere erişim yolu
+publish_mode: editorial_workflow
+media_folder: "assets/img/uploads"
+public_folder: "/assets/img/uploads"
 
 collections:
-  # 1. DUYURULAR YÖNETİMİ
+  # 1. DUYURULAR YÖNETİMİ (Değişmedi)
   - name: "announcements"
     label: "📢 Güncel Duyurular"
-    folder: "_announcements" # Duyuru dosyalarının kaydedileceği klasör (bu klasörü oluşturun!)
+    folder: "_announcements"
     create: true
     delete: true
     fields:
@@ -21,17 +29,17 @@ collections:
       - {label: "Kapak Görseli", name: "image", widget: "image", required: false}
       - {label: "Ek Dosya (PDF/Word)", name: "file_attachment", widget: "file", required: false, allow_multiple: false}
   
-  # 2. FİYATLANDIRMA YÖNETİMİ (3 Paket)
+  # 2. FİYATLANDIRMA YÖNETİMİ (3 Paket - Değişmedi)
   - name: "pricing"
     label: "💰 Fiyatlandırma Paketleri"
-    folder: "_data" # Statik veri dosyalarının kaydedileceği yer
-    create: false # Yeni paket eklemeye izin verme (sadece düzenleme)
+    folder: "_data"
+    create: false
     delete: false
-    format: json # Verileri JSON formatında tutacağız
+    format: json
     files:
       - label: "Paket Fiyatlarını Yönet"
         name: "packages"
-        file: "_data/packages.json" # Bu dosyayı manuel olarak oluşturmanız gerekecek (Aşağıya bakınız)
+        file: "_data/packages.json"
         fields:
           # --- BRONZE PAKET ---
           - label: "Bronze Paket Adı"
@@ -44,7 +52,7 @@ collections:
             default: "1.500"
           - label: "Bronze Paket Özellikleri (Liste)"
             name: "bronze_features"
-            widget: "list" # Her maddeyi ayrı ayrı girmeyi sağlar
+            widget: "list"
             field: {label: "Özellik Maddesi", name: "feature_item", widget: "string"}
 
           # --- SILVER PAKET ---
