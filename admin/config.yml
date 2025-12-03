@@ -5,9 +5,8 @@ backend:
   
   # --- AUTH0 / OpenID Connect AYARLARI ---
   base_url: https://ephemeral-brigadeiros-3e1020.netlify.app # Sitenizin canlı URL'si
-  auth_url: https://[AUTH0 DOMAIN ADINIZ]/authorize # Örn: https://dev-xyz.auth0.com/authorize
-  base_url: https://[AUTH0 DOMAIN ADINIZ] # Örn: https://dev-xyz.auth0.com
-  app_id: "[AUTH0 CLIENT ID'NİZİ BURAYA YAZIN]" # Auth0 uygulamanızın Client ID'si
+  auth_url: https://dev-y5gvcrhgfsyrvu0n.us.auth0.com/authorize # Örn: https://dev-xyz.auth0.com/authorize
+  app_id: "lzqHCZcz7lClbTYaqEa22Vfyd6gS5hRd" # Auth0 uygulamanızın Client ID'si
   # --- AUTH0 AYARLARI SONU ---
 
 publish_mode: editorial_workflow
