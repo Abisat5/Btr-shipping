@@ -1,6 +1,10 @@
 backend:
-  name: git-gateway
+  name: auth0
   branch: main
+  auth0_domain: "dev-y5gvcrhgfsyrvu0n.us.auth0.com"
+  auth0_client_id: "lzqHCZcz7lClbTYaqEa22Vfyd6gS5hRd"
+  auth0_audience: "https://dev-y5gvcrhgfsyrvu0n.us.auth0.com/api/v2/"
+  auth0_scope: "openid profile email"
 
 media_folder: "assets/img/uploads"
 public_folder: "/assets/img/uploads"
