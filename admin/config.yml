@@ -1,0 +1,76 @@
+backend:
+  name: git-gateway
+  branch: main # Ana dalınızın 'main' olduğundan emin olun!
+
+publish_mode: editorial_workflow # İçeriği yayımlamadan önce taslak olarak kaydetmenizi sağlar
+media_folder: "assets/img/uploads" # Yüklenen resimlerin kaydedileceği yer
+public_folder: "/assets/img/uploads" # Resimlere erişim yolu
+
+collections:
+  # 1. DUYURULAR YÖNETİMİ
+  - name: "announcements"
+    label: "📢 Güncel Duyurular"
+    folder: "_announcements" # Duyuru dosyalarının kaydedileceği klasör (bu klasörü oluşturun!)
+    create: true
+    delete: true
+    fields:
+      - {label: "Başlık", name: "title", widget: "string", required: true}
+      - {label: "Özet Metin (Ana Sayfa)", name: "summary", widget: "text"}
+      - {label: "Yayın Tarihi", name: "date", widget: "datetime"}
+      - {label: "Detaylı İçerik", name: "body", widget: "markdown"}
+      - {label: "Kapak Görseli", name: "image", widget: "image", required: false}
+      - {label: "Ek Dosya (PDF/Word)", name: "file_attachment", widget: "file", required: false, allow_multiple: false}
+  
+  # 2. FİYATLANDIRMA YÖNETİMİ (3 Paket)
+  - name: "pricing"
+    label: "💰 Fiyatlandırma Paketleri"
+    folder: "_data" # Statik veri dosyalarının kaydedileceği yer
+    create: false # Yeni paket eklemeye izin verme (sadece düzenleme)
+    delete: false
+    format: json # Verileri JSON formatında tutacağız
+    files:
+      - label: "Paket Fiyatlarını Yönet"
+        name: "packages"
+        file: "_data/packages.json" # Bu dosyayı manuel olarak oluşturmanız gerekecek (Aşağıya bakınız)
+        fields:
+          # --- BRONZE PAKET ---
+          - label: "Bronze Paket Adı"
+            name: "bronze_name"
+            widget: "string"
+            default: "Temel Liman Paketi (Bronze)"
+          - label: "Bronze Paket Fiyatı (Sadece Rakam, Örn: 1.500)"
+            name: "bronze_price"
+            widget: "string"
+            default: "1.500"
+          - label: "Bronze Paket Özellikleri (Liste)"
+            name: "bronze_features"
+            widget: "list" # Her maddeyi ayrı ayrı girmeyi sağlar
+            field: {label: "Özellik Maddesi", name: "feature_item", widget: "string"}
+
+          # --- SILVER PAKET ---
+          - label: "Silver Paket Adı"
+            name: "silver_name"
+            widget: "string"
+            default: "Kapsamlı Operasyon Paketi (Silver)"
+          - label: "Silver Paket Fiyatı (Sadece Rakam, Örn: 2.800)"
+            name: "silver_price"
+            widget: "string"
+            default: "2.800"
+          - label: "Silver Paket Özellikleri (Liste)"
+            name: "silver_features"
+            widget: "list"
+            field: {label: "Özellik Maddesi", name: "feature_item", widget: "string"}
+
+          # --- GOLD PAKET ---
+          - label: "Gold Paket Adı"
+            name: "gold_name"
+            widget: "string"
+            default: "Premium Tam Destek Paketi (Gold)"
+          - label: "Gold Paket Fiyatı (Sadece Rakam, Örn: 4.500)"
+            name: "gold_price"
+            widget: "string"
+            default: "4.500"
+          - label: "Gold Paket Özellikleri (Liste)"
+            name: "gold_features"
+            widget: "list"
+            field: {label: "Özellik Maddesi", name: "feature_item", widget: "string"}
