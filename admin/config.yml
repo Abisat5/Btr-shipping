@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Abisat5/Btr-shipping
+  repo: abisat5/Btr-shipping
   branch: main
 
 media_folder: "static/uploads"
