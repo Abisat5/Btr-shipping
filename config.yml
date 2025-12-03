@@ -1,25 +1,21 @@
 backend:
-  # Netlify CMS'in Git ile iletişim kurması için ana ayar
   name: git-gateway
-  branch: main # Ana dalınızın 'main' olduğundan emin olun!
-  
-  # --- AUTH0 ENTEGRASYON AYARLARI ---
-  base_url: https://ephemeral-brigadeiros-3e1020.netlify.app 
-  auth_url: https://dev-y5gvcrhgfsyrvu0n.us.auth0.com/authorize 
-  app_id: "lzqHCZcz7lClbTYaqEa22Vfyd6gS5hRd" # Kendi Auth0 Client ID'niz
-  # --- AUTH0 AYARLARI SONU ---
+  branch: main
 
-# CRITICAL: CMS'in dosya ve yayınlama yönetimini belirler
-publish_mode: editorial_workflow
 media_folder: "assets/img/uploads"
 public_folder: "/assets/img/uploads"
 
-# CRITICAL: CMS'te soldaki menüleri oluşturur
+media_library:
+  name: uploadcare
+  config:
+    publicKey: "demopublickey" # gerçek kullanımı isteğe bağlı, default çalışır
+
+publish_mode: editorial_workflow
+
 collections:
-  # 1. DUYURULAR YÖNETİMİ
   - name: "announcements"
     label: "📢 Güncel Duyurular"
-    folder: "_announcements" 
+    folder: "_announcements"
     create: true
     delete: true
     fields:
@@ -29,12 +25,11 @@ collections:
       - {label: "Detaylı İçerik", name: "body", widget: "markdown"}
       - {label: "Kapak Görseli", name: "image", widget: "image", required: false}
       - {label: "Ek Dosya (PDF/Word)", name: "file_attachment", widget: "file", required: false, allow_multiple: false}
-  
-  # 2. FİYATLANDIRMA YÖNETİMİ (3 Paket)
+
   - name: "pricing"
     label: "💰 Fiyatlandırma Paketleri"
-    folder: "_data" # Statik veri dosyalarının kaydedileceği yer
-    create: false 
+    folder: "_data"
+    create: false
     delete: false
     format: json
     files:
@@ -42,44 +37,14 @@ collections:
         name: "packages"
         file: "_data/packages.json"
         fields:
-          # --- BRONZE PAKET ---
-          - label: "Bronze Paket Adı"
-            name: "bronze_name"
-            widget: "string"
-            default: "Temel Liman Paketi (Bronze)"
-          - label: "Bronze Paket Fiyatı (Sadece Rakam, Örn: 1.500)"
-            name: "bronze_price"
-            widget: "string"
-            default: "1.500"
-          - label: "Bronze Paket Özellikleri (Liste)"
-            name: "bronze_features"
-            widget: "list"
-            field: {label: "Özellik Maddesi", name: "feature_item", widget: "string"}
+          - {label: "Bronze Paket Adı", name: "bronze_name", widget: "string", default: "Temel Liman Paketi (Bronze)"}
+          - {label: "Bronze Paket Fiyatı", name: "bronze_price", widget: "string", default: "1.500"}
+          - {label: "Bronze Paket Özellikleri", name: "bronze_features", widget: "list", field: {label: "Özellik Maddesi", name: "feature_item", widget: "string"}}
 
-          # --- SILVER PAKET ---
-          - label: "Silver Paket Adı"
-            name: "silver_name"
-            widget: "string"
-            default: "Kapsamlı Operasyon Paketi (Silver)"
-          - label: "Silver Paket Fiyatı (Sadece Rakam, Örn: 2.800)"
-            name: "silver_price"
-            widget: "string"
-            default: "2.800"
-          - label: "Silver Paket Özellikleri (Liste)"
-            name: "silver_features"
-            widget: "list"
-            field: {label: "Özellik Maddesi", name: "feature_item", widget: "string"}
+          - {label: "Silver Paket Adı", name: "silver_name", widget: "string", default: "Kapsamlı Operasyon Paketi (Silver)"}
+          - {label: "Silver Paket Fiyatı", name: "silver_price", widget: "string", default: "2.800"}
+          - {label: "Silver Paket Özellikleri", name: "silver_features", widget: "list", field: {label: "Özellik Maddesi", name: "feature_item", widget: "string"}}
 
-          # --- GOLD PAKET ---
-          - label: "Gold Paket Adı"
-            name: "gold_name"
-            widget: "string"
-            default: "Premium Tam Destek Paketi (Gold)"
-          - label: "Gold Paket Fiyatı (Sadece Rakam, Örn: 4.500)"
-            name: "gold_price"
-            widget: "string"
-            default: "4.500"
-          - label: "Gold Paket Özellikleri (Liste)"
-            name: "gold_features"
-            widget: "list"
-            field: {label: "Özellik Maddesi", name: "feature_item", widget: "string"}
+          - {label: "Gold Paket Adı", name: "gold_name", widget: "string", default: "Premium Tam Destek Paketi (Gold)"}
+          - {label: "Gold Paket Fiyatı", name: "gold_price", widget: "string", default: "4.500"}
+          - {label: "Gold Paket Özellikleri", name: "gold_features", widget: "list", field: {label: "Özellik Maddesi", name: "feature_item", widget: "string"}}
