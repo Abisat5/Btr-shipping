@@ -8,7 +8,7 @@ public_folder: "/assets/img/uploads"
 media_library:
   name: uploadcare
   config:
-    publicKey: "demopublickey" # gerçek kullanımı isteğe bağlı, default çalışır
+    publicKey: "demopublickey"
 
 publish_mode: editorial_workflow
 
