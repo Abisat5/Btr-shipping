@@ -1,10 +1,10 @@
 backend:
-    name: github
-    repo: abisat5/Btr-shipping
-    branch: main
-    base_url: https://abisat5.github.io/Btr-shipping
-    auth_endpoint: oauth/authorize.html
-    client_id: "Ov23liUvKBE0rQIx5H6j"
+  name: github
+  repo: abisat5/Btr-shipping
+  branch: main
+  base_url: https://abisat5.github.io/Btr-shipping
+  auth_endpoint: oauth/authorize.html
+  client_id: "Ov23liUvKBE0rQIx5H6j"
 
 media_folder: "static/uploads"
 public_folder: "/static/uploads"
@@ -50,12 +50,10 @@ collections:
             name: "bronze_name"
             widget: "string"
             default: "Temel Liman Paketi (Bronze)"
-
           - label: "Bronze Paket Fiyatı"
             name: "bronze_price"
             widget: "string"
             default: "1.500"
-
           - label: "Bronze Paket Özellikleri (Liste)"
             name: "bronze_features"
             widget: "list"
@@ -69,12 +67,10 @@ collections:
             name: "silver_name"
             widget: "string"
             default: "Kapsamlı Operasyon Paketi (Silver)"
-
           - label: "Silver Paket Fiyatı"
             name: "silver_price"
             widget: "string"
             default: "2.800"
-
           - label: "Silver Paket Özellikleri (Liste)"
             name: "silver_features"
             widget: "list"
@@ -88,12 +84,10 @@ collections:
             name: "gold_name"
             widget: "string"
             default: "Premium Tam Destek Paketi (Gold)"
-
           - label: "Gold Paket Fiyatı"
             name: "gold_price"
             widget: "string"
             default: "4.500"
-
           - label: "Gold Paket Özellikleri (Liste)"
             name: "gold_features"
             widget: "list"
