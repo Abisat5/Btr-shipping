@@ -11,18 +11,17 @@
   <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.9.0/dist/decap-cms.js"></script>
 
   <script>
-    // Sayfanın DOM'u tamamen yüklendikten sonra CMS'i başlatır
+    // DOM tamamen yüklendikten sonra Decap CMS'i başlatır
     document.addEventListener("DOMContentLoaded", () => {
-      // Decap CMS'i yapılandırma dosyası ile başlat
+      // 'Decap' nesnesinin yüklendiğini kontrol et
       if (window.Decap) {
         window.Decap.init({
-          // config.yml dosyanızın yolu
-          config: '/admin/config.yml',
-          // CMS'in render edileceği root element
+          // config.yml admin/ içinde olduğu için bu yol doğrudur
+          config: '/admin/config.yml', 
           root: '#nc-root' 
         });
       } else {
-        console.error("Decap CMS yüklenemedi! window.Decap nesnesi bulunamadı.");
+        console.error("Decap CMS başlatılamadı.");
       }
     });
   </script>

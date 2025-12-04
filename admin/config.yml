@@ -2,7 +2,7 @@ backend:
   name: github
   repo: abisat5/Btr-shipping
   branch: main
-  # Netlify Proxy Kullanımı (OAuth sorununu çözer)
+  # OAuth sorunlarını çözmek için Netlify Proxy kullanılır
   base_url: https://api.netlify.com 
   auth_scope: repo
   site_id: Ov23liUvKBE0rQIx5H6j 
@@ -78,7 +78,7 @@ collections:
           - label: "Gold Paket Adı"
             name: "gold_name"
             widget: "string"
-            default: "Premium Tam Destek Paketi (Gold)" # <-- YAML hatası burada düzeltildi.
+            default: "Premium Tam Destek Paketi (Gold)"
           - label: "Gold Paket Fiyatı"
             name: "gold_price"
             widget: "string"
