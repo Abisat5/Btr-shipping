@@ -2,20 +2,28 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <title>Admin Paneli</title>
-  <!-- Decap CMS JS (jsDelivr kullanıyoruz, daha stabil) -->
-  <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.9.0/dist/decap-cms.js"></script>
+  <title>BTR Shipping Admin Paneli</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <!-- CMS render edilecek root element -->
   <div id="nc-root"></div>
 
+  <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.9.0/dist/decap-cms.js"></script>
+
   <script>
+    // Sayfanın DOM'u tamamen yüklendikten sonra CMS'i başlatır
     document.addEventListener("DOMContentLoaded", () => {
-      Decap.init({
-        config: '/admin/config.yml',  // Config dosyanın yolu
-        root: '#nc-root'
-      });
+      // Decap CMS'i yapılandırma dosyası ile başlat
+      if (window.Decap) {
+        window.Decap.init({
+          // config.yml dosyanızın yolu
+          config: '/admin/config.yml',
+          // CMS'in render edileceği root element
+          root: '#nc-root' 
+        });
+      } else {
+        console.error("Decap CMS yüklenemedi! window.Decap nesnesi bulunamadı.");
+      }
     });
   </script>
 </body>

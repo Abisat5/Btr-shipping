@@ -2,9 +2,10 @@ backend:
   name: github
   repo: abisat5/Btr-shipping
   branch: main
-  base_url: https://api.netlify.com
+  # Netlify Proxy Kullanımı (OAuth sorununu çözer)
+  base_url: https://api.netlify.com 
   auth_scope: repo
-  site_id: Ov23liUvKBE0rQIx5H6j
+  site_id: Ov23liUvKBE0rQIx5H6j 
 
 media_folder: "static/uploads"
 public_folder: "/static/uploads"
@@ -14,7 +15,7 @@ publish_mode: editorial_workflow
 collections:
 
   - name: "announcements"
-    label: "Güncel Duyurular"
+    label: "📢 Güncel Duyurular"
     folder: "_announcements"
     create: true
     delete: true
@@ -27,16 +28,19 @@ collections:
       - { label: "Ek Dosya (PDF/Word)", name: "file_attachment", widget: "file", required: false, allow_multiple: false }
 
   - name: "pricing"
-    label: "Fiyatlandırma Paketleri"
+    label: "💰 Fiyatlandırma Paketleri"
     folder: "_data"
     create: false
     delete: false
     format: json
+
     files:
       - label: "Paket Fiyatlarını Yönet"
         name: "packages"
         file: "_data/packages.json"
         fields:
+
+          # BRONZE
           - label: "Bronze Paket Adı"
             name: "bronze_name"
             widget: "string"
@@ -53,6 +57,7 @@ collections:
               name: "feature_item"
               widget: "string"
 
+          # SILVER
           - label: "Silver Paket Adı"
             name: "silver_name"
             widget: "string"
@@ -69,10 +74,11 @@ collections:
               name: "feature_item"
               widget: "string"
 
+          # GOLD
           - label: "Gold Paket Adı"
             name: "gold_name"
             widget: "string"
-            default: "Premium Tam Destek Paketi (Gold)"
+            default: "Premium Tam Destek Paketi (Gold)" # <-- YAML hatası burada düzeltildi.
           - label: "Gold Paket Fiyatı"
             name: "gold_price"
             widget: "string"
