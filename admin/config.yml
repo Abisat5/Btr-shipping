@@ -2,9 +2,9 @@ backend:
   name: github
   repo: abisat5/Btr-shipping
   branch: main
-  auth_type: oauth
-  app_id: "Ov23liUvKBE0rQIx5H6j"  # client_id yerine app_id kullan
-
+  base_url: https://abisat5.github.io/Btr-shipping
+  auth_endpoint: oauth/authorize.html
+  client_id: "Ov23liUvKBE0rQIx5H6j"
 
 media_folder: "static/uploads"
 public_folder: "/static/uploads"
