@@ -633,12 +633,32 @@
     <script src="./lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
     
-    <script>
+<div class="row" id="duyuru-listesi">
+  <!-- Duyurular JS ile buraya yüklenecek -->
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="duyuruModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Duyuru</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body" id="duyuruModalBody">
+        <!-- İçerik JS ile gelecek -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('duyuru-listesi');
     container.innerHTML = '';
 
-    fetch('http://localhost:1337/api/duyurular?sort=date:desc')
+    fetch('http://localhost:1337/api/duyurular?populate=media&sort=date:desc')
         .then(res => {
             if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
             return res.json();
@@ -649,33 +669,58 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            data.data.slice(0, 3).forEach(item => { 
+            data.data.slice(0, 3).forEach(item => {
                 const title = item.title;
                 const contentText = item.content[0]?.children[0]?.text || '';
                 const dateString = item.date 
                     ? new Date(item.date).toLocaleDateString('tr-TR', { day: '2-digit', month: 'long', year: 'numeric' }) 
                     : 'Tarih Yok';
-                
+
                 const div = document.createElement('div');
                 div.className = 'col-lg-4 col-md-6 wow fadeInUp';
                 div.setAttribute('data-wow-delay', '0.3s');
 
                 div.innerHTML = `
-                    <div class="service-item p-4">
+                    <div class="service-item p-4" data-id="${item.id}" style="cursor:pointer;">
                         <h5 class="mb-2">${title}</h5>
                         <p>${contentText}</p>
                         <small class="text-primary">${dateString}</small>
                     </div>
                 `;
                 container.appendChild(div);
+
+                // Tıklayınca modal aç
+                div.querySelector('.service-item').addEventListener('click', () => {
+                    let contentHTML = `<h5>${title}</h5><p>${contentText}</p>`;
+
+                    // Media varsa ekle
+                    if (item.media && item.media.length > 0) {
+                        item.media.forEach(file => {
+                            const fileUrl = "http://localhost:1337" + file.url;
+                            if (file.mime.startsWith('image/')) {
+                                contentHTML += `<img src="${fileUrl}" class="img-fluid mb-3"/>`;
+                            } else {
+                                contentHTML += `<a href="${fileUrl}" target="_blank">Dosya: ${file.name}</a><br/>`;
+                            }
+                        });
+                    }
+
+                    // Modal aç
+                    const modalBody = document.getElementById('duyuruModalBody');
+                    modalBody.innerHTML = contentHTML;
+                    const modal = new bootstrap.Modal(document.getElementById('duyuruModal'));
+                    modal.show();
+                });
             });
         })
         .catch(err => {
-            container.innerHTML = `<div class="col-12 text-center py-5"><p class="text-danger">Duyurular yüklenirken bir hata oluştu. (API adresi: http://localhost:1337) Lütfen konsol loglarını kontrol edin.</p></div>`;
+            container.innerHTML = `<div class="col-12 text-center py-5"><p class="text-danger">Duyurular yüklenirken bir hata oluştu. Lütfen konsolu kontrol edin.</p></div>`;
             console.error('Duyuru yükleme hatası:', err);
         });
 });
 </script>
+
+
 
 
     </body>

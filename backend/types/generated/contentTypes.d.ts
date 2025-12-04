@@ -489,6 +489,10 @@ export interface ApiDuyuruDuyuru extends Struct.CollectionTypeSchema {
       'api::duyuru.duyuru'
     > &
       Schema.Attribute.Private;
+    media: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
