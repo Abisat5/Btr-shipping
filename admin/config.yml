@@ -2,12 +2,13 @@ backend:
   name: github
   repo: abisat5/Btr-shipping
   branch: main
-  # 💡 Tavsiye: Kendi sitenizdeki base_url yerine, kimlik doğrulama için 
-  # Decap CMS'in resmi vekil sunucusunu (proxy) kullanıyoruz.
-  # Bu, 404 hatalarını çözer.
+  # Bu adres, CMS'e kimlik doğrulama dosyasını 
+  # kendi siteniz yerine Netlify'de aramasını söyler.
   base_url: https://api.netlify.com 
   auth_scope: repo
-  site_id: Ov23liUvKBE0rQIx5H6j # client_id yerine Decap CMS tarafından bu kullanılır.
+  site_id: Ov23liUvKBE0rQIx5H6j 
+
+# NOT: auth_endpoint satırını config.yml'den tamamen silin.
 
 media_folder: "static/uploads"
 public_folder: "/static/uploads"
