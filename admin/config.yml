@@ -2,18 +2,17 @@ backend:
   name: github
   repo: abisat5/Btr-shipping
   branch: main
-  base_url: https://api.netlify.com
+  base_url: https://api.netlify.com 
   auth_scope: repo
   site_id: Ov23liUvKBE0rQIx5H6j
 
 media_folder: "static/uploads"
 public_folder: "/static/uploads"
-
 publish_mode: editorial_workflow
 
 collections:
 
-  # 📢 DUYURULAR
+  # 📢 Duyurular
   - name: "announcements"
     label: "📢 Güncel Duyurular"
     folder: "_announcements"
@@ -27,7 +26,7 @@ collections:
       - { label: "Kapak Görseli", name: "image", widget: "image", required: false }
       - { label: "Ek Dosya (PDF/Word)", name: "file_attachment", widget: "file", required: false, allow_multiple: false }
 
-  # 💰 FİYATLANDIRMA
+  # 💰 Fiyatlandırma Paketleri
   - name: "pricing"
     label: "💰 Fiyatlandırma Paketleri"
     folder: "_data"
@@ -39,7 +38,6 @@ collections:
         name: "packages"
         file: "_data/packages.json"
         fields:
-          # Bronze Paket
           - label: "Bronze Paket Adı"
             name: "bronze_name"
             widget: "string"
@@ -55,8 +53,6 @@ collections:
               label: "Özellik Maddesi"
               name: "feature_item"
               widget: "string"
-
-          # Silver Paket
           - label: "Silver Paket Adı"
             name: "silver_name"
             widget: "string"
@@ -72,8 +68,6 @@ collections:
               label: "Özellik Maddesi"
               name: "feature_item"
               widget: "string"
-
-          # Gold Paket
           - label: "Gold Paket Adı"
             name: "gold_name"
             widget: "string"
