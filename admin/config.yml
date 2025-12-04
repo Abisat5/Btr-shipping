@@ -2,7 +2,7 @@ backend:
   name: github
   repo: abisat5/Btr-shipping
   branch: main
-  base_url: https://api.netlify.com 
+  base_url: https://api.netlify.com
   auth_scope: repo
   site_id: Ov23liUvKBE0rQIx5H6j
 
@@ -67,14 +67,3 @@ collections:
             default: "2.800"
           - label: "Silver Paket Özellikleri (Liste)"
             name: "silver_features"
-            widget: "list"
-            field:
-              label: "Özellik Maddesi"
-              name: "feature_item"
-              widget: "string"
-
-          # Gold Paket
-          - label: "Gold Paket Adı"
-            name: "gold_name"
-            widget: "string"
-            default: "Prem

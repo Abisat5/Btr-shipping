@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Admin Paneli</title>
-  <script src="https://unpkg.com/decap-cms@3.9.0/dist/decap-cms.js"></script>
+  <!-- Decap CMS JS (jsDelivr kullanıyoruz, Tracking Prevention engelini aşmak için) -->
+  <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.9.0/dist/decap-cms.js"></script>
 </head>
 <body>
+  <!-- CMS render edilecek root element -->
   <div id="nc-root"></div>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       if (typeof Decap !== "undefined") {
         Decap.init({
-          config: '/admin/config.yml',
+          config: '/admin/config.yml',  // Config dosyanın yolu
           root: '#nc-root'
         });
       } else {
