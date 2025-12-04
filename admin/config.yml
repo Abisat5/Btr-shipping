@@ -1,3 +1,6 @@
+# GitHub Pages alt dizin desteği için base_path eklenmiştir
+base_path: /Btr-shipping/
+
 backend:
   name: github
   repo: abisat5/Btr-shipping
