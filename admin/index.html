@@ -11,7 +11,7 @@
   <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.9.0/dist/decap-cms.js"></script>
 
   <script>
-    // window.onload, tüm DOM ve scriptler yüklendikten sonra kodun çalışmasını garanti eder.
+    // window.onload, tüm dosyalar yüklendikten sonra çalışmayı garanti eder.
     window.onload = function() {
         if (window.Decap) {
             window.Decap.init({
@@ -20,7 +20,8 @@
                 root: '#nc-root' 
             });
         } else {
-            console.error("HATA: Decap CMS başlatılamadı.");
+            // Bu hata artık sadece tarayıcı güvenlik kısıtlamaları nedeniyle görünmelidir.
+            console.error("HATA: Decap CMS başlatılamadı. (Güvenlik Kısıtlaması veya Yükleme Hatası)");
         }
     };
   </script>

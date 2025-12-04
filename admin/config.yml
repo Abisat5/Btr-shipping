@@ -42,8 +42,6 @@ collections:
         name: "packages"
         file: "_data/packages.json"
         fields:
-
-          # BRONZE
           - label: "Bronze Paket Adı"
             name: "bronze_name"
             widget: "string"
@@ -60,7 +58,6 @@ collections:
               name: "feature_item"
               widget: "string"
 
-          # SILVER
           - label: "Silver Paket Adı"
             name: "silver_name"
             widget: "string"
@@ -77,7 +74,6 @@ collections:
               name: "feature_item"
               widget: "string"
 
-          # GOLD
           - label: "Gold Paket Adı"
             name: "gold_name"
             widget: "string"
