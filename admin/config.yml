@@ -39,6 +39,7 @@ collections:
         name: "packages"
         file: "_data/packages.json"
         fields:
+          # Bronze Paket
           - label: "Bronze Paket Adı"
             name: "bronze_name"
             widget: "string"
@@ -54,6 +55,8 @@ collections:
               label: "Özellik Maddesi"
               name: "feature_item"
               widget: "string"
+
+          # Silver Paket
           - label: "Silver Paket Adı"
             name: "silver_name"
             widget: "string"
@@ -69,18 +72,9 @@ collections:
               label: "Özellik Maddesi"
               name: "feature_item"
               widget: "string"
+
+          # Gold Paket
           - label: "Gold Paket Adı"
             name: "gold_name"
             widget: "string"
-            default: "Premium Tam Destek Paketi (Gold)"
-          - label: "Gold Paket Fiyatı"
-            name: "gold_price"
-            widget: "string"
-            default: "4.500"
-          - label: "Gold Paket Özellikleri (Liste)"
-            name: "gold_features"
-            widget: "list"
-            field:
-              label: "Özellik Maddesi"
-              name: "feature_item"
-              widget: "string"
+            default: "Prem

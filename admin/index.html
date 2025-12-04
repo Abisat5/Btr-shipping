@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>Admin Paneli</title>
-  <!-- Decap CMS JS -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <!-- Decap CMS JS (3.9.0) -->
+  <script src="https://unpkg.com/decap-cms@3.9.0/dist/decap-cms.js"></script>
 </head>
 <body>
   <!-- CMS render edilecek root element -->
@@ -12,6 +12,7 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      // Decap CMS başlat
       Decap.init({
         config: '/admin/config.yml',  // Config dosyanın yolu
         root: '#nc-root'
