@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Admin Paneli</title>
-  <!-- Decap CMS JS (jsDelivr kullanıyoruz, Tracking Prevention engelini aşmak için) -->
+  <!-- Decap CMS JS (jsDelivr ile, Tracking Prevention sorunu yaşamamak için) -->
   <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.9.0/dist/decap-cms.js"></script>
 </head>
 <body>
@@ -14,7 +14,7 @@
     document.addEventListener("DOMContentLoaded", () => {
       if (typeof Decap !== "undefined") {
         Decap.init({
-          config: '/admin/config.yml',  // Config dosyanın yolu
+          config: '/admin/config.yml', // Config dosyanın yolu
           root: '#nc-root'
         });
       } else {

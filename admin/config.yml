@@ -50,20 +50,3 @@ collections:
             default: "1.500"
           - label: "Bronze Paket Özellikleri (Liste)"
             name: "bronze_features"
-            widget: "list"
-            field:
-              label: "Özellik Maddesi"
-              name: "feature_item"
-              widget: "string"
-
-          # Silver Paket
-          - label: "Silver Paket Adı"
-            name: "silver_name"
-            widget: "string"
-            default: "Kapsamlı Operasyon Paketi (Silver)"
-          - label: "Silver Paket Fiyatı"
-            name: "silver_price"
-            widget: "string"
-            default: "2.800"
-          - label: "Silver Paket Özellikleri (Liste)"
-            name: "silver_features"
