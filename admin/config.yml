@@ -2,9 +2,12 @@ backend:
   name: github
   repo: abisat5/Btr-shipping
   branch: main
-  base_url: https://abisat5.github.io/Btr-shipping
-  auth_endpoint: oauth/authorize.html
-  client_id: "Ov23liUvKBE0rQIx5H6j"
+  # 💡 Tavsiye: Kendi sitenizdeki base_url yerine, kimlik doğrulama için 
+  # Decap CMS'in resmi vekil sunucusunu (proxy) kullanıyoruz.
+  # Bu, 404 hatalarını çözer.
+  base_url: https://api.netlify.com 
+  auth_scope: repo
+  site_id: Ov23liUvKBE0rQIx5H6j # client_id yerine Decap CMS tarafından bu kullanılır.
 
 media_folder: "static/uploads"
 public_folder: "/static/uploads"
