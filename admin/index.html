@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Admin Paneli</title>
-  <!-- Decap CMS JS (3.9.0) -->
   <script src="https://unpkg.com/decap-cms@3.9.0/dist/decap-cms.js"></script>
 </head>
 <body>
-  <!-- CMS render edilecek root element -->
   <div id="nc-root"></div>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // Decap CMS başlat
-      Decap.init({
-        config: '/admin/config.yml',  // Config dosyanın yolu
-        root: '#nc-root'
-      });
+      if (typeof Decap !== "undefined") {
+        Decap.init({
+          config: '/admin/config.yml',
+          root: '#nc-root'
+        });
+      } else {
+        console.error("Decap CMS yüklenemedi!");
+      }
     });
   </script>
 </body>
