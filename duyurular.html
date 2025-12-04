@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tüm Duyurular</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #f8f9fa;
+    }
+    .duyuru-card {
+        display: flex;
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 15px;
+        cursor: pointer;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .duyuru-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+    .duyuru-date {
+        background-color: #0033a0;
+        color: #fff;
+        padding: 15px;
+        text-align: center;
+        min-width: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .duyuru-date span {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    .duyuru-content {
+        padding: 15px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .duyuru-content h5 {
+        margin: 0;
+        font-weight: 600;
+    }
+    .duyuru-content p {
+        margin: 5px 0 0 0;
+        color: #555;
+        font-size: 0.95rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .btn-back {
+        margin: 20px 0;
+    }
+    .modal-body img {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+    .btn-doc {
+        margin-bottom: 8px;
+    }
+    /* Slider overlay */
+    .header-carousel .position-absolute {
+        background: rgba(6,3,21,.5);
+    }
+    .header-carousel img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary sticky-top p-0">
+        <a href="index.html" class="navbar-brand bg-primary d-flex align-items-center px-4 px-lg-5">
+            <h2 class="mb-2 text-white">BTR Denizcilik</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Ana Sayfa</a>
+                <a href="about.html" class="nav-item nav-link">Hakkımızda</a>
+                <a href="service.html" class="nav-item nav-link">Servislerimiz</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sayfalar</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="price.html" class="dropdown-item">Ücretlendirme</a>
+                        <a href="feature.html" class="dropdown-item">Özellikler</a>
+                        <a href="quote.html" class="dropdown-item">Fiyat Teklifi</a>
+                        <a href="team.html" class="dropdown-item">Ekibimiz</a>
+                        <a href="testimonial.html" class="dropdown-item">Referans</a>
+                        <a href="404.html" class="dropdown-item">404 Page</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">İletişim</a>
+            </div>
+            <h4 class="m-0 pe-lg-5 d-none d-lg-block"><i class="fa fa-headphones text-primary me-3"></i>Telefon Numarası</h4>
+        </div>
+    </nav>
+
+<!-- Duyurular -->
+<div class="container my-4">
+    <h2 class="mb-4">Tüm Duyurular</h2>
+    <div id="duyuru-listesi"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+<script>
+$(document).ready(function(){
+    $(".owl-carousel").owlCarousel({
+        items:1,
+        loop:true,
+        autoplay:true,
+        autoplayTimeout:5000,
+        nav:true,
+        dots:false
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('duyuru-listesi');
+
+    fetch('http://localhost:1337/api/duyurular?sort=date:desc&populate=media')
+        .then(res => res.json())
+        .then(data => {
+            const items = data.data;
+            if(!items || items.length === 0){
+                container.innerHTML = '<p class="text-center text-muted py-5">Duyuru bulunamadı.</p>';
+                return;
+            }
+
+            items.forEach(item => {
+                const dateObj = new Date(item.date);
+                const day = dateObj.getDate();
+                const month = dateObj.toLocaleString('tr-TR', { month: 'short' }).toUpperCase();
+                const title = item.title || "Başlıksız";
+                const contentText = item.content[0]?.children[0]?.text || "";
+
+                const card = document.createElement('div');
+                card.className = 'duyuru-card';
+                card.innerHTML = `
+                    <div class="duyuru-date">
+                        <span>${day}</span>
+                        <small>${month}</small>
+                    </div>
+                    <div class="duyuru-content">
+                        <h5>${title}</h5>
+                        <p>${contentText}</p>
+                    </div>
+                `;
+
+                card.addEventListener('click', () => {
+                    let mediaHtml = '';
+                    if(item.media && item.media.length > 0){
+                        mediaHtml = item.media.map(m=>{
+                            const url = m.url.startsWith('http') ? m.url : `http://localhost:1337${m.url}`;
+                            const ext = url.split('.').pop().toLowerCase();
+                            if(['jpg','jpeg','png','gif','webp'].includes(ext)){
+                                return `<img src="${url}" alt="${title}">`;
+                            } else {
+                                return `<a href="${url}" target="_blank" class="btn btn-outline-secondary btn-doc">${m.name}</a>`;
+                            }
+                        }).join('');
+                    }
+
+                    const modalHtml = `
+                        <div class="modal fade" id="duyuruModal" tabindex="-1">
+                            <div class="modal-dialog modal-lg modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">${title}</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>${contentText}</p>
+                                        ${mediaHtml}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    const existingModal = document.getElementById('duyuruModal');
+                    if(existingModal) existingModal.remove();
+                    document.body.insertAdjacentHTML('beforeend', modalHtml);
+                    new bootstrap.Modal(document.getElementById('duyuruModal')).show();
+                });
+
+                container.appendChild(card);
+            });
+        })
+        .catch(err => {
+            console.error(err);
+            container.innerHTML = '<p class="text-center text-danger py-5">Duyurular yüklenirken hata oluştu.</p>';
+        });
+});
+</script>
+</body>
+</html>
