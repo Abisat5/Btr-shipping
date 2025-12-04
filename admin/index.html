@@ -3,10 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <title>Admin Paneli</title>
-  <!-- Netlify CMS JS -->
+  <!-- Decap CMS JS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 <body>
-  <!-- Netlify CMS otomatik açılıyor -->
+  <!-- CMS render edilecek root element -->
+  <div id="nc-root"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      Decap.init({
+        config: '/admin/config.yml',  // Config dosyanın yolu
+        root: '#nc-root'
+      });
+    });
+  </script>
 </body>
 </html>
