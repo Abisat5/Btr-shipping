@@ -2,33 +2,32 @@ backend:
   name: github
   repo: abisat5/Btr-shipping
   branch: main
-  base_url: https://api.netlify.com 
+  base_url: https://api.netlify.com
   auth_scope: repo
   site_id: Ov23liUvKBE0rQIx5H6j
 
 media_folder: "static/uploads"
 public_folder: "/static/uploads"
+
 publish_mode: editorial_workflow
 
 collections:
 
-  # 📢 Duyurular
   - name: "announcements"
-    label: "📢 Güncel Duyurular"
+    label: "Güncel Duyurular"
     folder: "_announcements"
     create: true
     delete: true
     fields:
       - { label: "Başlık", name: "title", widget: "string", required: true }
-      - { label: "Özet Metin (Ana Sayfa)", name: "summary", widget: "text" }
+      - { label: "Özet Metin", name: "summary", widget: "text" }
       - { label: "Yayın Tarihi", name: "date", widget: "datetime" }
       - { label: "Detaylı İçerik", name: "body", widget: "markdown" }
       - { label: "Kapak Görseli", name: "image", widget: "image", required: false }
       - { label: "Ek Dosya (PDF/Word)", name: "file_attachment", widget: "file", required: false, allow_multiple: false }
 
-  # 💰 Fiyatlandırma Paketleri
   - name: "pricing"
-    label: "💰 Fiyatlandırma Paketleri"
+    label: "Fiyatlandırma Paketleri"
     folder: "_data"
     create: false
     delete: false
@@ -46,13 +45,14 @@ collections:
             name: "bronze_price"
             widget: "string"
             default: "1.500"
-          - label: "Bronze Paket Özellikleri (Liste)"
+          - label: "Bronze Paket Özellikleri"
             name: "bronze_features"
             widget: "list"
             field:
               label: "Özellik Maddesi"
               name: "feature_item"
               widget: "string"
+
           - label: "Silver Paket Adı"
             name: "silver_name"
             widget: "string"
@@ -61,13 +61,14 @@ collections:
             name: "silver_price"
             widget: "string"
             default: "2.800"
-          - label: "Silver Paket Özellikleri (Liste)"
+          - label: "Silver Paket Özellikleri"
             name: "silver_features"
             widget: "list"
             field:
               label: "Özellik Maddesi"
               name: "feature_item"
               widget: "string"
+
           - label: "Gold Paket Adı"
             name: "gold_name"
             widget: "string"
@@ -76,7 +77,7 @@ collections:
             name: "gold_price"
             widget: "string"
             default: "4.500"
-          - label: "Gold Paket Özellikleri (Liste)"
+          - label: "Gold Paket Özellikleri"
             name: "gold_features"
             widget: "list"
             field:

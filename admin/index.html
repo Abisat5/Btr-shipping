@@ -1,36 +1,21 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Admin Paneli</title>
+  <!-- Decap CMS JS (jsDelivr kullanıyoruz, daha stabil) -->
   <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.9.0/dist/decap-cms.js"></script>
 </head>
 <body>
+  <!-- CMS render edilecek root element -->
   <div id="nc-root"></div>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      console.log("DOM yüklendi, #nc-root kontrol ediliyor...");
-      const root = document.getElementById("nc-root");
-      if (!root) {
-        console.error("#nc-root bulunamadı!");
-        return;
-      }
-
-      if (typeof Decap === "undefined") {
-        console.error("Decap CMS yüklenemedi!");
-        return;
-      }
-
-      try {
-        console.log("Decap init başlatılıyor...");
-        Decap.init({
-          config: '/admin/config.yml',
-          root: '#nc-root'
-        });
-      } catch (e) {
-        console.error("Decap init sırasında hata oluştu:", e);
-      }
+      Decap.init({
+        config: '/admin/config.yml',  // Config dosyanın yolu
+        root: '#nc-root'
+      });
     });
   </script>
 </body>
