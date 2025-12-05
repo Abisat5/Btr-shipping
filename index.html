@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Logistica - Shipping Company Website Template</title>
+    <title>BTR-Shipping</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -25,7 +25,7 @@
 <body>
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
+            <span class="sr-only">Yükleniyor...</span>
         </div>
     </div>
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary sticky-top p-0">
@@ -39,12 +39,12 @@
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.html" class="nav-item nav-link active">Ana Sayfa</a>
                 <a href="about.html" class="nav-item nav-link">Hakkımızda</a>
-                <a href="service.html" class="nav-item nav-link">Servislerimiz</a>
+                <a href="service.html" class="nav-item nav-link">Hizmetlerimiz</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sayfalar</a>
                     <div class="dropdown-menu fade-up m-0">
                         <a href="price.html" class="dropdown-item">Ücretlendirme</a>
-                        <a href="feature.html" class="dropdown-item">Özellikler</a>
+                        <a href="feature.html" class="dropdown-item">Misyon-Vizyon</a>
                         <a href="quote.html" class="dropdown-item">Rezervasyon</a>
                         <a href="team.html" class="dropdown-item">Ekibimiz</a>
                         <a href="testimonial.html" class="dropdown-item">Referans</a>
@@ -69,8 +69,13 @@
                                 <h5 class="text-white text-uppercase mb-3 animated slideInDown">Global Denizcilik Hizmetleri</h5>
                                 <h1 class="display-3 text-white animated slideInDown mb-4">Gemi Acenteliği ve Lojistikte <span class="text-primary">Profesyonel</span> hizmet</h1>
                                 <p class="fs-5 fw-medium text-white mb-4 pb-2">Denizcilik sektöründe uzman ekibimizle, taşımacılık ve lojistik süreçlerinizi sorunsuz yönetiyoruz.</p>
-                                <a href="service.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Detaylı Bilgi</a>
-                                <a href="contact.html" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Teklif Alın</a>
+                                <a class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
+                                data-bs-toggle="modal" 
+                                data-bs-target="#heroInfoModal">
+                                Detaylı Bilgi                         
+                            </a> 
+                                
+                                <a href="quote.html" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Teklif Alın</a>
                             </div>
                         </div>
                     </div>
@@ -83,10 +88,14 @@
                         <div class="row justify-content-start">
                             <div class="col-10 col-lg-8">
                                 <h5 class="text-white text-uppercase mb-3 animated slideInDown">Hız Güven Çözüm</h5>
-                                <h1 class="display-3 text-white animated slideInDown mb-4">Globak Ticaretin Anahtarı <span class="text-primary">Tek Tıkla</span> Çözüm</h1>
+                                <h1 class="display-3 text-white animated slideInDown mb-4">Global Ticaretin Anahtarı <span class="text-primary">Tek Tıkla</span> Çözüm</h1>
                                 <p class="fs-5 fw-medium text-white mb-4 pb-2">Uluslararası taşımacılık ve lojistik süreçlerinizi en hızlı, en güvenli ve en kolay şekilde yönetiyoruz. Dünya sizin pazarınız, biz sizin en güvenilir ortağınızız.</p>
-                                <a href="service.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Daha Fazla</a>
-                                <a href="contact.html" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Teklif Alın</a>
+                                <a class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#slider2Modal">
+                                   Daha Fazla
+                                </a>
+                                <a href="quote.html" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Teklif Alın</a>
                             </div>
                         </div>
                     </div>
@@ -183,124 +192,179 @@
         </div>
     </div>
     <!--Service-->
-     <div class="container-xxl py-5">
-        <div class="container py-5">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-secondary text-uppercase">Hizmetlerimiz</h6>
-                <h1 class="mb-5">Hizmetlerimizi Keşfedin</h1>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item p-4">
-                        <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/limanacente.jpg" alt="">
-                        </div>
-                        <h4 class="mb-3">Liman Acenteliği</h4>
-                        <p>Tüm liman formalitelerini sizin adınıza hızlı ve sorunsuz şekilde yürütüyoruz.</p>
-                        <a class="btn-slide mt-2" href="#" data-bs-toggle="modal" data-bs-target="#limanModal1">
-                             <i class="fa fa-arrow-right"></i><span>Daha Fazla</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item p-4">
-                        <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/gemidestek.jpg" alt="">
-                        </div>
-                        <h4 class="mb-3">Mürettebat ve Gemi Desteği</h4>
-                        <p>Gemi personelinin tüm ihtiyaçlarını 7/24 karşılayan profesyonel destek hizmeti.</p>
-                        <a class="btn-slide mt-2" href="#" data-bs-toggle="modal" data-bs-target="#mudestekModal1">
-                             <i class="fa fa-arrow-right"></i><span>Daha Fazla</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="service-item p-4">
-                        <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/teknikdestek.jpg" alt="">
-                        </div>
-                        <h4 class="mb-3">Teknik Destek ve Bakım</h4>
-                        <p>Her türlü teknik ihtiyacınıza hızlı çözüm sunan bakım ve onarım desteği.</p>
-                        <a class="btn-slide mt-2" href="#" data-bs-toggle="modal" data-bs-target="#modalTeknikDestek1">
-                            <i class="fa fa-arrow-right"></i><span>Daha Fazla</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item p-4">
-                        <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/romorkaj.jpg" alt="">
-                        </div>
-                        <h4 class="mb-3">Römorkaj ve Kılavuzluk</h4>
-                        <p>Güvenli yanaşma operasyonları için deneyimli ekip ve güçlü iş ortakları.</p>
-                        <a class="btn-slide mt-2" href="#" data-bs-toggle="modal" data-bs-target="#romorkajModal1">
-                             <i class="fa fa-arrow-right"></i><span>Daha Fazla</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item p-4">
-                        <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/yedekp.jpg" alt="">
-                        </div>
-                        <h4 class="mb-3">Yedek Parça ve Lojistik Destek</h4>
-                        <p>Tüm yedek parça ve ekipman tedarik süreçlerini güvenle yönetiyoruz.</p>
-                        <a class="btn-slide mt-2" href="#" data-bs-toggle="modal" data-bs-target="#modalYedekParca1">
-                            <i class="fa fa-arrow-right"></i><span>Daha Fazla</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="service-item p-4">
-                        <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/Yakıttedarik .png" alt="">
-                        </div>
-                        <h4 class="mb-3">Yakıt ve Kumanya Tedariği</h4>
-                        <p>Operasyonel sürekliliğiniz için güvenilir yakıt ve kumanya temini.</p>
-                        <a class="btn-slide mt-2" href="#" data-bs-toggle="modal" data-bs-target="#modalYakitKumanya1">
-                            <i class="fa fa-arrow-right"></i><span>Daha Fazla</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="service-item p-4">
-                        <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/kargotakip.png" alt="">
-                        </div>
-                        <h4 class="mb-3">Kargo Takip ve Belgelendirme Hizmetleri</h4>
-                        <p>Tüm yük operasyonlarınızı şeffaf, güvenli ve belgeli biçimde yürütüyoruz.</p>
-                        <a class="btn-slide mt-2" href="#" data-bs-toggle="modal" data-bs-target="#modalKargoTakip1">
-                            <i class="fa fa-arrow-right"></i><span>Daha Fazla</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="service-item p-4">
-                        <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/gemitemsil.jpg" alt="">
-                        </div>
-                        <h4 class="mb-3">Gemi Temsil ve Koordinasyon Hizmetleri</h4>
-                        <p>Sizin adınıza tüm operasyonel süreçleri tek elden yönetiyoruz</p>
-                        <a class="btn-slide mt-2" href="#" data-bs-toggle="modal" data-bs-target="#modalGemiTemsil1">
-                            <i class="fa fa-arrow-right"></i><span>Daha Fazla</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="service-item p-4">
-                        <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/acil.jpg" alt="">
-                        </div>
-                        <h4 class="mb-3">Acil Durum ve 7/24 Destek Hizmetleri</h4>
-                        <p>Liman operasyonlarınızda her an yanınızda olan destek ekibi.</p>
-                        <a class="btn-slide mt-2" href="#" data-bs-toggle="modal" data-bs-target="#modalAcilDestek1">
-                             <i class="fa fa-arrow-right"></i><span>Daha Fazla</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+<!-- Service Slider -->
+<div class="container-xxl py-5">
+    <div class="container py-5">
+
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="text-secondary text-uppercase">Hizmetlerimiz</h6>
+            <h1 class="mb-5">Hizmetlerimizi Keşfedin</h1>
         </div>
+
+        <!-- SLIDER BAŞLANGIÇ -->
+        <div id="serviceCarousel" class="carousel slide" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+
+                <!-- SLAYT 1 -->
+                <div class="carousel-item active">
+                    <div class="row g-4">
+                        
+                        <!-- 1. HİZMET -->
+                        <div class="col-md-4">
+                            <div class="service-item p-4">
+                                <div class="overflow-hidden mb-4">
+                                    <img class="img-fluid" src="img/limanacente.jpg" alt="">
+                                </div>
+                                <h4 class="mb-3">Liman Acenteliği</h4>
+                                <p>Tüm liman formalitelerini sizin adınıza hızlı ve sorunsuz şekilde yürütüyoruz.</p>
+                                <a class="btn-slide mt-2" href="#" data-bs-toggle="modal" data-bs-target="#limanModal1">
+                                    <i class="fa fa-arrow-right"></i><span>Daha Fazla</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 2. HİZMET -->
+                        <div class="col-md-4">
+                            <div class="service-item p-4">
+                                <div class="overflow-hidden mb-4">
+                                    <img class="img-fluid" src="img/gemidestek.jpg" alt="">
+                                </div>
+                                <h4 class="mb-3">Mürettebat ve Gemi Desteği</h4>
+                                <p>Gemi personelinin tüm ihtiyaçlarını 7/24 karşılayan profesyonel destek.</p>
+                                <a class="btn-slide mt-2" href="#" data-bs-toggle="modal" data-bs-target="#mudestekModal1">
+                                    <i class="fa fa-arrow-right"></i><span>Daha Fazla</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 3. HİZMET -->
+                        <div class="col-md-4">
+                            <div class="service-item p-4">
+                                <div class="overflow-hidden mb-4">
+                                    <img class="img-fluid" src="img/teknikdestek.jpg" alt="">
+                                </div>
+                                <h4 class="mb-3">Teknik Destek ve Bakım</h4>
+                                <p>Her türlü teknik ihtiyacınıza hızlı çözüm sunan bakım ve onarım desteği.</p>
+                                <a class="btn-slide mt-2" href="#" data-bs-toggle="modal" data-bs-target="#modalTeknikDestek1">
+                                    <i class="fa fa-arrow-right"></i><span>Daha Fazla</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- SLAYT 2 -->
+                <div class="carousel-item">
+                    <div class="row g-4">
+
+                        <div class="col-md-4">
+                            <div class="service-item p-4">
+                                <div class="overflow-hidden mb-4">
+                                    <img class="img-fluid" src="img/romorkaj.jpg" alt="">
+                                </div>
+                                <h4 class="mb-3">Römorkaj ve Kılavuzluk</h4>
+                                <p>Güvenli yanaşma operasyonları için deneyimli ekip ve güçlü iş ortakları.</p>
+                                <a class="btn-slide mt-2" href="#" data-bs-toggle="modal" data-bs-target="#romorkajModal1">
+                                    <i class="fa fa-arrow-right"></i><span>Daha Fazla</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="service-item p-4">
+                                <div class="overflow-hidden mb-4">
+                                    <img class="img-fluid" src="img/yedekp.jpg" alt="">
+                                </div>
+                                <h4 class="mb-3">Yedek Parça ve Lojistik Destek</h4>
+                                <p>Tüm yedek parça ve ekipman tedarik süreçlerini güvenle yönetiyoruz.</p>
+                                <a class="btn-slide mt-2" href="#" data-bs-toggle="modal" data-bs-target="#modalYedekParca1">
+                                    <i class="fa fa-arrow-right"></i><span>Daha Fazla</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="service-item p-4">
+                                <div class="overflow-hidden mb-4">
+                                    <img class="img-fluid" src="img/Yakıttedarik .png" alt="">
+                                </div>
+                                <h4 class="mb-3">Yakıt ve Kumanya Tedariği</h4>
+                                <p>Operasyonel sürekliliğiniz için güvenilir yakıt ve kumanya temini.</p>
+                                <a class="btn-slide mt-2" href="#" data-bs-toggle="modal" data-bs-target="#modalYakitKumanya1">
+                                    <i class="fa fa-arrow-right"></i><span>Daha Fazla</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- SLAYT 3 -->
+                <div class="carousel-item">
+                    <div class="row g-4">
+
+                        <div class="col-md-4">
+                            <div class="service-item p-4">
+                                <div class="overflow-hidden mb-4">
+                                    <img class="img-fluid" src="img/kargotakip.png" alt="">
+                                </div>
+                                <h4 class="mb-3">Kargo Takip ve Belgelendirme</h4>
+                                <p>Tüm yük operasyonlarınızı şeffaf, güvenli ve belgeli şekilde yürütüyoruz.</p>
+                                <a class="btn-slide mt-2" href="#" data-bs-toggle="modal" data-bs-target="#modalKargoTakip1">
+                                    <i class="fa fa-arrow-right"></i><span>Daha Fazla</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="service-item p-4">
+                                <div class="overflow-hidden mb-4">
+                                    <img class="img-fluid" src="img/gemitemsil.jpg" alt="">
+                                </div>
+                                <h4 class="mb-3">Gemi Temsil ve Koordinasyon</h4>
+                                <p>Sizin adınıza tüm operasyonel süreçleri tek elden yönetiyoruz.</p>
+                                <a class="btn-slide mt-2" href="#" data-bs-toggle="modal" data-bs-target="#modalGemiTemsil1">
+                                    <i class="fa fa-arrow-right"></i><span>Daha Fazla</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="service-item p-4">
+                                <div class="overflow-hidden mb-4">
+                                    <img class="img-fluid" src="img/acil.jpg" alt="">
+                                </div>
+                                <h4 class="mb-3">Acil Durum ve 7/24 Destek</h4>
+                                <p>Liman operasyonlarınızda her an yanınızda olan destek ekibi.</p>
+                                <a class="btn-slide mt-2" href="#" data-bs-toggle="modal" data-bs-target="#modalAcilDestek1">
+                                    <i class="fa fa-arrow-right"></i><span>Daha Fazla</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SLIDER KONTROLLERİ -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#serviceCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#serviceCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
+        </div>
+        <!-- SLIDER BİTİŞ -->
+         <div class="col-12 text-center pt-5 wow fadeInUp" data-wow-delay="0.1s">
+                <a href="service.html" class="btn btn-primary py-3 px-5">Hizmetleri Direkt Görüntüleyin <i class="fa fa-arrow-right ms-3"></i></a>
+         </div>
     </div>
+</div>
+
     <div class="container-fluid overflow-hidden py-5 px-lg-0">
         <div class="container feature py-5 px-lg-0">
             <div class="row g-5 mx-lg-0">
@@ -337,6 +401,58 @@
             </div>
         </div>
     </div>
+    <!--Vizyonumuz-->
+    <div class="container-fluid overflow-hidden py-5 px-lg-0">
+    <div class="container feature py-5 px-lg-0">
+        <div class="row g-5 mx-lg-0">
+
+            <!-- Sol taraf (metin) -->
+            <div class="col-lg-6 feature-text wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-secondary text-uppercase mb-3">Vizyonumuz</h6>
+                <h1 class="mb-5">Denizcilik ve lojistik sektöründe yenilikçi, güvenilir ve lider bir çözüm ortağı olmak.</h1>
+
+                <div class="d-flex mb-5 wow fadeInUp" data-wow-delay="0.3s">
+                    <i class="fa fa-lightbulb text-primary fa-3x flex-shrink-0"></i>
+                    <div class="ms-4">
+                        <h5>Yenilikçi Hizmet Yaklaşımı</h5>
+                        <p class="mb-0">
+                            Dijitalleşen denizcilik dünyasında modern çözümler üreterek, operasyon süreçlerini daha verimli, hızlı ve şeffaf hâle getirmeyi hedefliyoruz.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="d-flex mb-5 wow fadeInUp" data-wow-delay="0.5s">
+                    <i class="fa fa-chart-line text-primary fa-3x flex-shrink-0"></i>
+                    <div class="ms-4">
+                        <h5>Sektörde Liderlik</h5>
+                        <p class="mb-0">
+                            Bölgesel ve uluslararası pazarda sürdürülebilir büyüme sağlayarak, müşterilerimizin ilk tercih ettiği acentelerden biri olmayı amaçlıyoruz.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="d-flex mb-0 wow fadeInUp" data-wow-delay="0.7s">
+                    <i class="fa fa-handshake text-primary fa-3x flex-shrink-0"></i>
+                    <div class="ms-4">
+                        <h5>Müşteri Odaklılık</h5>
+                        <p class="mb-0">
+                            Güvenilirliğimizi ve hizmet kalitemizi en üst seviyede tutarak, uzun vadeli iş birliği ve memnuniyet yaratmayı vizyonumuzun temel ilkesi olarak benimsiyoruz.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sağ taraf (fotoğraf) -->
+            <div class="col-lg-6 pe-lg-0 wow fadeInLeft" data-wow-delay="0.1s" style="min-height: 400px;">
+                <div class="position-relative h-100">
+                    <img class="position-absolute img-fluid w-100 h-100" src="img/vizyon.jpg" style="object-fit: cover;" alt="Vizyonumuz">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--Vizyon Bitiş-->
     <div class="container-xxl py-5">
         <div class="container py-5">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -603,7 +719,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Servislerimiz</h4>
+                    <h4 class="text-light mb-4">Hizmetlerimiz</h4>
                     <a class="btn btn-link" href="">Liman Acenteliği</a>
                     <a class="btn btn-link" href="">Mürettabat ve Gemi Desteği</a>
                     <a class="btn btn-link" href="">Teknik Destek ve Bakım</a>
@@ -614,7 +730,7 @@
                     <h4 class="text-light mb-4">Hızlı Linkler</h4>
                     <a class="btn btn-link" href="about.html">Hakkımızda</a>
                     <a class="btn btn-link" href="contact.html">İletişim</a>
-                    <a class="btn btn-link" href="service.html">Servislerimiz</a>
+                    <a class="btn btn-link" href="service.html">Hizmetlerimiz</a>
                     <a class="btn btn-link" href="index.html">Ana Sayfa</a>
                     <a class="btn btn-link" href="duyuru.html">Duyurular</a>
                     <a class="btn btn-link" href="http://localhost:1337/admin">Admin Giriş</a>
@@ -985,6 +1101,88 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--Bitiş-->
+<!-- Ana Sayfa - Detaylı Bilgi Modal -->
+<div class="modal fade" id="heroInfoModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Gemi Acenteliği ve Lojistik Hizmetlerimiz</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <p class="mb-3">
+          BTR Denizcilik olarak, global denizcilik operasyonlarınızın her aşamasında profesyonel destek sağlıyoruz.
+          Gemi acenteliği, lojistik yönetimi, operasyonel koordinasyon ve liman işlemleri dahil olmak üzere 
+          geniş bir hizmet yelpazesinde çözümler sunuyoruz.
+        </p>
+
+        <h6 class="fw-bold mt-3">Sunduğumuz temel hizmetler:</h6>
+        <ul>
+          <li>Liman Acenteliği ve Resmî işlemler</li>
+          <li>Kargo operasyon yönetimi ve belgelendirme</li>
+          <li>Mürettebat değişim ve destek hizmetleri</li>
+          <li>Teknik destek, bakım ve yedek parça tedariki</li>
+          <li>Römorkaj ve kılavuzluk hizmetleri koordinasyonu</li>
+          <li>7/24 acil durum desteği</li>
+        </ul>
+
+        <p class="mt-3">
+          Profesyonel ekibimizle operasyon süreçlerinizi hızlandırıyor, riskleri azaltıyor 
+          ve her zaman en uygun çözümleri sunuyoruz.
+        </p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--Bitiş-->
+<!-- Slider 2 - Daha Fazla Modal -->
+<div class="modal fade" id="slider2Modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Global Ticaret ve Lojistik Çözümlerimiz</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <p class="mb-3">
+          Uluslararası ticaretin hızla değişen dünyasında, işletmelerin her adımda güvenilir ve hızlı 
+          çözümlere ihtiyaç duyduğunu biliyoruz. BTR Denizcilik olarak, global lojistik zincirinin 
+          tüm aşamalarında yanınızdayız.
+        </p>
+
+        <h6 class="fw-bold mt-3">Bu kapsamda sunduğumuz hizmetlerden bazıları:</h6>
+        <ul>
+          <li>Uluslararası yük taşımacılığı koordinasyonu</li>
+          <li>Gümrük ve belgelendirme süreç yönetimi</li>
+          <li>Liman operasyonları ve acentelik desteği</li>
+          <li>Kara, deniz ve çok modlu taşımacılık çözümleri</li>
+          <li>Depolama, dağıtım ve tedarik zinciri optimizasyonu</li>
+          <li>Acil durum ve operasyon merkezi desteği</li>
+        </ul>
+
+        <p class="mt-3">
+          Tek tıkla çözüme ulaşabileceğiniz, hızlı, güvenli ve profesyonel bir lojistik yönetimi için 
+          doğru adrestesiniz. Global rekabette bir adım öne geçmenizi sağlıyoruz.
+        </p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
       </div>
 
     </div>
