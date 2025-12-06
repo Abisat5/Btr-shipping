@@ -489,92 +489,32 @@
             </div>
         </div>
     </div>
-    <div id="orderModal" class="modal">
+    <!-- Order Modal -->
+<div class="modal fade" id="orderModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h3>Sipariş Bilgileri</h3>
+
+      <div class="modal-header">
+        <h5 class="modal-title">Sipariş Bilgileri</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+      </div>
+
+      <div class="modal-body">
         <form id="orderForm">
-            <input type="text" name="ad" placeholder="Adınız" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="text" name="telefon" placeholder="Telefon" required>
-            <input type="text" name="adres" placeholder="Adres" required>
-            <input type="hidden" name="paket" id="paket">
-            <button type="submit" class="submit-btn">Siparişi Gönder</button>
+          <input type="text" name="ad" placeholder="Adınız" class="form-control mb-2" required>
+          <input type="email" name="email" placeholder="Email" class="form-control mb-2" required>
+          <input type="text" name="telefon" placeholder="Telefon" class="form-control mb-2" required>
+          <input type="text" name="adres" placeholder="Adres" class="form-control mb-2" required>
+          <input type="hidden" name="paket" id="paket">
+          <button type="submit" class="btn btn-primary w-100 mt-2">Siparişi Gönder</button>
         </form>
+      </div>
+
     </div>
+  </div>
 </div>
 
-<style>
-/* Modal arka plan */
-.modal {
-    display: none; /* Başlangıçta gizli */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    justify-content: center;
-    align-items: center;
-    animation: fadeIn 0.3s;
-}
 
-/* Modal kutusu */
-.modal-content {
-    background: #fff;
-    padding: 30px 20px;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 400px;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    animation: slideDown 0.4s;
-}
-
-/* Close butonu */
-.close {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    cursor: pointer;
-    color: #333;
-    transition: color 0.2s;
-}
-.close:hover { color: #ff4b5c; }
-
-.modal-content h3 { text-align: center; margin-bottom: 20px; color: #007bff; }
-
-.modal-content input {
-    width: 100%;
-    padding: 12px 15px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 15px;
-    transition: border 0.2s;
-}
-.modal-content input:focus { border-color: #007bff; outline: none; }
-
-.submit-btn {
-    width: 100%;
-    padding: 12px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-}
-.submit-btn:hover { background: #0056b3; transform: translateY(-2px); }
-
-/* Animasyonlar */
-@keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
-@keyframes slideDown { from {transform: translateY(-50px); opacity:0;} to {transform: translateY(0); opacity:1;} }
-</style>
 
     
     <div class="container-xxl py-5">
@@ -950,483 +890,483 @@
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./lib/wow/wow.min.js"></script>
-    <script src="./lib/easing/easing.min.js"></script>
-    <script src="./lib/waypoints/waypoints.min.js"></script>
-    <script src="./lib/counterup/counterup.min.js"></script>
-    <script src="./lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
-    
-<div class="row" id="duyuru-listesi">
-  <!-- Duyurular JS ile buraya yüklenecek -->
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="duyuruModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Duyuru</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body" id="duyuruModalBody">
-        <!-- İçerik JS ile gelecek -->
-      </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="./lib/wow/wow.min.js"></script>
+        <script src="./lib/easing/easing.min.js"></script>
+        <script src="./lib/waypoints/waypoints.min.js"></script>
+        <script src="./lib/counterup/counterup.min.js"></script>
+        <script src="./lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="js/main.js"></script>
+        
+    <div class="row" id="duyuru-listesi">
+    <!-- Duyurular JS ile buraya yüklenecek -->
     </div>
-  </div>
-</div>
- <!-- Liman Acenteliği Modal -->
-<div class="modal fade" id="limanModal1" tabindex="-1" aria-labelledby="limanModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content rounded-4 shadow-lg">
-      <div class="modal-header">
-        <h4 class="modal-title" id="limanModalLabel">Liman Acenteliği Hizmeti</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
-      </div>
 
-      <div class="modal-body">
-        <p>
-          Liman acenteliği hizmetimiz kapsamında, geminizin limana girişinden çıkışına kadar tüm operasyonel süreçleri profesyonel ekibimiz ile yönetiyoruz.
-        </p>
-        <p>
-          Sağlanan hizmetlerden bazıları:
-        </p>
-        <ul>
-          <li>Liman giriş-çıkış formaliteleri</li>
-          <li>Yükleme ve boşaltma süreçlerinin koordinasyonu</li>
-          <li>Gümrük işlemleri desteği</li>
-          <li>Gemi personeli lojistiği</li>
-          <li>Resmî daire işlemleri takibi</li>
-        </ul>
-        <p>
-          Tüm süreçler, uluslararası standartlara uygun şekilde hızlı, güvenilir ve şeffaf olarak yönetilmektedir.
-        </p>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-      </div>
+    <!-- Modal -->
+    <div class="modal fade" id="duyuruModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Duyuru</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" id="duyuruModalBody">
+            <!-- İçerik JS ile gelecek -->
+        </div>
+        </div>
     </div>
-  </div>
-</div>
-<!--Liman Acenteliği Modal Bitiş-->
-<!-- Mürettebat ve Gemi Desteği Modal -->
-<div class="modal fade" id="mudestekModal1" tabindex="-1" aria-labelledby="mudestekModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content rounded-4 shadow-lg">
-      <div class="modal-header">
-        <h4 class="modal-title" id="mudestekModalLabel">Mürettebat ve Gemi Desteği</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
-      </div>
-
-      <div class="modal-body">
-        <p>
-          Gemide görev yapan mürettebatın tüm ihtiyaçlarını hızlı, güvenilir ve 7/24 erişilebilir şekilde karşılayan kapsamlı bir destek hizmeti sunuyoruz.
-        </p>
-
-        <p>Verdiğimiz destek hizmetlerinden bazıları:</p>
-
-        <ul>
-          <li>Personel değişimi organizasyonu ve ulaşım planlaması</li>
-          <li>Gemiye çıkış/iniş işlemlerinin takibi</li>
-          <li>Vize, pasaport ve resmi evrak işlemlerinin yönetimi</li>
-          <li>Sağlık, konaklama ve lojistik desteği</li>
-          <li>Yedek parça ve teknik malzeme temini</li>
-        </ul>
-
-        <p>
-          Amacımız, gemi operasyonlarının kesintisiz ve sorunsuz devam etmesini sağlamak için mürettebatın tüm ihtiyaçlarına hızlı çözümler üretmektir.
-        </p>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-      </div>
     </div>
-  </div>
-</div>
-<!--Mürettebat ve Gemi Desteği Modal Bitiş-->
-<!-- Römorkaj ve Kılavuzluk Modal -->
-<div class="modal fade" id="romorkajModal1" tabindex="-1" aria-labelledby="romorkajModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content rounded-4 shadow-lg">
+    <!-- Liman Acenteliği Modal -->
+    <div class="modal fade" id="limanModal1" tabindex="-1" aria-labelledby="limanModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content rounded-4 shadow-lg">
+        <div class="modal-header">
+            <h4 class="modal-title" id="limanModalLabel">Liman Acenteliği Hizmeti</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+        </div>
 
-      <div class="modal-header">
-        <h4 class="modal-title" id="romorkajModalLabel">Römorkaj ve Kılavuzluk</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
-      </div>
+        <div class="modal-body">
+            <p>
+            Liman acenteliği hizmetimiz kapsamında, geminizin limana girişinden çıkışına kadar tüm operasyonel süreçleri profesyonel ekibimiz ile yönetiyoruz.
+            </p>
+            <p>
+            Sağlanan hizmetlerden bazıları:
+            </p>
+            <ul>
+            <li>Liman giriş-çıkış formaliteleri</li>
+            <li>Yükleme ve boşaltma süreçlerinin koordinasyonu</li>
+            <li>Gümrük işlemleri desteği</li>
+            <li>Gemi personeli lojistiği</li>
+            <li>Resmî daire işlemleri takibi</li>
+            </ul>
+            <p>
+            Tüm süreçler, uluslararası standartlara uygun şekilde hızlı, güvenilir ve şeffaf olarak yönetilmektedir.
+            </p>
+        </div>
 
-      <div class="modal-body">
-
-        <p>
-          Gemilerin güvenli ve sorunsuz bir şekilde limana yanaşması, ayrılması ve manevra yapması için 
-          profesyonel römorkaj ve kılavuzluk desteği sağlıyoruz. Deneyimli ekiplerimiz, tüm operasyonların 
-          uluslararası güvenlik standartlarına uygun şekilde yürütülmesini garanti eder.
-        </p>
-
-        <p>Hizmet kapsamımız:</p>
-
-        <ul>
-          <li>Römorkör desteği ile güvenli yanaşma ve ayrılma operasyonları</li>
-          <li>Kılavuz kaptan hizmeti</li>
-          <li>Kısıtlı görüş, kötü hava ve acil durum manevraları</li>
-          <li>Gece ve gündüz kesintisiz hizmet</li>
-          <li>Liman otoriteleri ile koordineli operasyon yönetimi</li>
-        </ul>
-
-        <p>
-          Güçlü iş ortaklarımız ve profesyonel ekiplerimiz sayesinde her ölçekte gemiye hızlı, güvenli ve 
-          verimli hizmet sunuyoruz.
-        </p>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-      </div>
-
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+        </div>
+        </div>
     </div>
-  </div>
-</div>
-<!--Bitiş-->
-<!-- Modal: Kargo Takip ve Belgelendirme Hizmetleri -->
-<div class="modal fade" id="modalKargoTakip1" tabindex="-1" aria-labelledby="modalKargoTakipLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalKargoTakipLabel">Kargo Takip ve Belgelendirme Hizmetleri</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <div class="modal-body">
-        <p>
-          Kargo takip ve belgelendirme hizmetlerimiz, tüm yük operasyonlarını
-          başlangıçtan teslimata kadar şeffaf, güvenli ve tamamen kayıtlı bir şekilde yönetir.
-          Müşterilerimize her aşamada güncel bilgi akışı sunuyor ve tüm belgeleri eksiksiz sağlıyoruz.
-        </p>
-
-        <ul>
-            <li>Gerçek zamanlı kargo takip sistemi</li>
-            <li>Yükleme–boşaltma süreçlerinin dijital kaydı</li>
-            <li>Tüm resmi belgelerin hazırlanması</li>
-            <li>Gümrük ve liman süreçlerinde belge desteği</li>
-            <li>24/7 operasyon bilgilendirme</li>
-        </ul>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-      </div>
-
     </div>
-  </div>
-</div>
-<!--Bitiş-->
-<!-- Modal: Yakıt ve Kumanya Tedariği -->
-<div class="modal fade" id="modalYakitKumanya1" tabindex="-1" aria-labelledby="modalYakitKumanyaLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
+    <!--Liman Acenteliği Modal Bitiş-->
+    <!-- Mürettebat ve Gemi Desteği Modal -->
+    <div class="modal fade" id="mudestekModal1" tabindex="-1" aria-labelledby="mudestekModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content rounded-4 shadow-lg">
+        <div class="modal-header">
+            <h4 class="modal-title" id="mudestekModalLabel">Mürettebat ve Gemi Desteği</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+        </div>
 
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalYakitKumanyaLabel">Yakıt ve Kumanya Tedariği</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+        <div class="modal-body">
+            <p>
+            Gemide görev yapan mürettebatın tüm ihtiyaçlarını hızlı, güvenilir ve 7/24 erişilebilir şekilde karşılayan kapsamlı bir destek hizmeti sunuyoruz.
+            </p>
 
-      <div class="modal-body">
-        <p>
-          Yakıt ve kumanya tedariği hizmetimiz, geminizin operasyonel sürekliliğini sağlamak için
-          tüm ihtiyaçları eksiksiz şekilde karşılar. Güvenilir tedarik zincirimiz sayesinde
-          hızlı, kaliteli ve uygun maliyetli çözümler sunuyoruz.
-        </p>
+            <p>Verdiğimiz destek hizmetlerinden bazıları:</p>
 
-        <ul>
-            <li>IFO, MGO, yağ ve diğer yakıt çeşitlerinin tedariği</li>
-            <li>Taze gıda, içecek ve temel ihtiyaç kumanyalarının temini</li>
-            <li>7/24 liman ve açık deniz teslimatı</li>
-            <li>Kalite kontrol ve sertifikalı ürün garantisi</li>
-            <li>Hızlı operasyon ve kesintisiz iletişim desteği</li>
-        </ul>
-      </div>
+            <ul>
+            <li>Personel değişimi organizasyonu ve ulaşım planlaması</li>
+            <li>Gemiye çıkış/iniş işlemlerinin takibi</li>
+            <li>Vize, pasaport ve resmi evrak işlemlerinin yönetimi</li>
+            <li>Sağlık, konaklama ve lojistik desteği</li>
+            <li>Yedek parça ve teknik malzeme temini</li>
+            </ul>
 
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-      </div>
+            <p>
+            Amacımız, gemi operasyonlarının kesintisiz ve sorunsuz devam etmesini sağlamak için mürettebatın tüm ihtiyaçlarına hızlı çözümler üretmektir.
+            </p>
+        </div>
 
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+        </div>
+        </div>
     </div>
-  </div>
-</div>
-<!--Bitiş-->
-<!-- Modal: Gemi Temsil ve Koordinasyon Hizmetleri -->
-<div class="modal fade" id="modalGemiTemsil1" tabindex="-1" aria-labelledby="modalGemiTemsilLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalGemiTemsilLabel">Gemi Temsil ve Koordinasyon Hizmetleri</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <div class="modal-body">
-        <p>
-          Gemi temsil ve koordinasyon hizmetlerimiz, tüm operasyonel süreçlerin tek elden,
-          profesyonel bir şekilde yönetilmesini sağlar. Liman süreçlerinden resmi işlemlere,
-          operasyon takibinden iletişim koordinasyonuna kadar her aşamada gemi sahipleri
-          ve kaptanlar adına hareket ediyoruz.
-        </p>
-
-        <ul>
-            <li>Liman giriş-çıkış operasyonlarının takibi</li>
-            <li>Resmî kurumlar ile tüm yazışmaların ve izinlerin yönetimi</li>
-            <li>Kargo ve operasyon planlaması koordinasyonu</li>
-            <li>Kaptan ve armatör ile kesintisiz iletişim</li>
-            <li>Gemi ihtiyaçlarının sahada temsil edilmesi</li>
-            <li>Operasyon sonrası raporlama ve bilgilendirme</li>
-        </ul>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Kapat
-        </button>
-      </div>
-
     </div>
-  </div>
-</div>
-<!--Bitiş-->
-<!-- Modal: Acil Durum ve 7/24 Destek Hizmetleri -->
-<div class="modal fade" id="modalAcilDestek1" tabindex="-1" aria-labelledby="modalAcilDestekLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
+    <!--Mürettebat ve Gemi Desteği Modal Bitiş-->
+    <!-- Römorkaj ve Kılavuzluk Modal -->
+    <div class="modal fade" id="romorkajModal1" tabindex="-1" aria-labelledby="romorkajModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content rounded-4 shadow-lg">
 
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalAcilDestekLabel">Acil Durum ve 7/24 Destek Hizmetleri</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+        <div class="modal-header">
+            <h4 class="modal-title" id="romorkajModalLabel">Römorkaj ve Kılavuzluk</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+        </div>
 
-      <div class="modal-body">
-        <p>
-          Acil durumlarda ve tüm liman operasyon süreçlerinde, anlık müdahale gerektiren her durumda 
-          profesyonel ekibimiz 7 gün 24 saat kesintisiz destek sağlar. Gemi operasyonlarının 
-          sekteye uğramaması için hızlı, güvenilir ve koordineli çözümler sunuyoruz.
-        </p>
+        <div class="modal-body">
 
-        <ul>
-            <li>7/24 çağrı ve acil müdahale desteği</li>
-            <li>Gemi operasyonlarında anlık problem çözümü</li>
-            <li>Liman ve sahadaki acil durum koordinasyonunun sağlanması</li>
-            <li>Kargo operasyonlarında kesinti önleyici hızlı destek</li>
-            <li>Resmi kurumlar ile acil durum iletişimi</li>
-            <li>Acil ikmal, teknik arıza veya personel ihtiyacının karşılanması</li>
-        </ul>
-      </div>
+            <p>
+            Gemilerin güvenli ve sorunsuz bir şekilde limana yanaşması, ayrılması ve manevra yapması için 
+            profesyonel römorkaj ve kılavuzluk desteği sağlıyoruz. Deneyimli ekiplerimiz, tüm operasyonların 
+            uluslararası güvenlik standartlarına uygun şekilde yürütülmesini garanti eder.
+            </p>
 
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Kapat
-        </button>
-      </div>
+            <p>Hizmet kapsamımız:</p>
 
+            <ul>
+            <li>Römorkör desteği ile güvenli yanaşma ve ayrılma operasyonları</li>
+            <li>Kılavuz kaptan hizmeti</li>
+            <li>Kısıtlı görüş, kötü hava ve acil durum manevraları</li>
+            <li>Gece ve gündüz kesintisiz hizmet</li>
+            <li>Liman otoriteleri ile koordineli operasyon yönetimi</li>
+            </ul>
+
+            <p>
+            Güçlü iş ortaklarımız ve profesyonel ekiplerimiz sayesinde her ölçekte gemiye hızlı, güvenli ve 
+            verimli hizmet sunuyoruz.
+            </p>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+        </div>
+
+        </div>
     </div>
-  </div>
-</div>
-<!--Bitiş-->
-<!-- Modal: Yedek Parça ve Lojistik Destek -->
-<div class="modal fade" id="modalYedekParca1" tabindex="-1" aria-labelledby="modalYedekParcaLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalYedekParcaLabel">Yedek Parça ve Lojistik Destek</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <div class="modal-body">
-        <p>
-          Gemi operasyonlarınızın kesintisiz devam edebilmesi için ihtiyaç duyulan tüm yedek parçaları, 
-          ekipmanları ve lojistik süreçleri profesyonel şekilde yönetiyoruz. Tedarik, teslimat ve 
-          koordinasyon aşamalarının tamamını hızlı ve güvenilir biçimde sizin adınıza yürütüyoruz.
-        </p>
-
-        <ul>
-            <li>Orijinal ve sertifikalı yedek parça temini</li>
-            <li>Acil yedek parça ihtiyaçlarında hızlı çözüm</li>
-            <li>Global tedarik ağı sayesinde geniş ürün yelpazesi</li>
-            <li>Lojistik ve nakliye sürecinin baştan sona yönetimi</li>
-            <li>Gümrük işlemleri ve gerekli belgelerin hazırlanması</li>
-            <li>Liman içi ve liman dışı teslimat seçenekleri</li>
-        </ul>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-      </div>
-
     </div>
-  </div>
-</div>
-<!--Bitiş-->
-<!-- Modal: Teknik Destek ve Bakım -->
-<div class="modal fade" id="modalTeknikDestek1" tabindex="-1" aria-labelledby="modalTeknikDestekLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
+    <!--Bitiş-->
+    <!-- Modal: Kargo Takip ve Belgelendirme Hizmetleri -->
+    <div class="modal fade" id="modalKargoTakip1" tabindex="-1" aria-labelledby="modalKargoTakipLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+        
+        <div class="modal-header">
+            <h5 class="modal-title" id="modalKargoTakipLabel">Kargo Takip ve Belgelendirme Hizmetleri</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
 
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalTeknikDestekLabel">Teknik Destek ve Bakım</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+        <div class="modal-body">
+            <p>
+            Kargo takip ve belgelendirme hizmetlerimiz, tüm yük operasyonlarını
+            başlangıçtan teslimata kadar şeffaf, güvenli ve tamamen kayıtlı bir şekilde yönetir.
+            Müşterilerimize her aşamada güncel bilgi akışı sunuyor ve tüm belgeleri eksiksiz sağlıyoruz.
+            </p>
 
-      <div class="modal-body">
-        <p>
-          Gemi ve liman operasyonlarınızda ortaya çıkan tüm teknik ihtiyaçlar için uzman ekibimiz 
-          hızlı ve güvenilir çözümler sunar. Arıza tespiti, bakım, onarım ve teknik koordinasyon süreçlerini 
-          profesyonel şekilde yönetiyoruz.
-        </p>
+            <ul>
+                <li>Gerçek zamanlı kargo takip sistemi</li>
+                <li>Yükleme–boşaltma süreçlerinin dijital kaydı</li>
+                <li>Tüm resmi belgelerin hazırlanması</li>
+                <li>Gümrük ve liman süreçlerinde belge desteği</li>
+                <li>24/7 operasyon bilgilendirme</li>
+            </ul>
+        </div>
 
-        <ul>
-            <li>7/24 teknik ekip desteği</li>
-            <li>Mekanik, elektrik ve elektronik arıza çözümleri</li>
-            <li>Acil müdahale ve yerinde servis hizmeti</li>
-            <li>Planlı bakım ve periyodik kontrol hizmetleri</li>
-            <li>Liman içi ve liman dışı teknik operasyon desteği</li>
-            <li>Yedek parça ve ekipman temini ile entegre çalışma</li>
-        </ul>
-      </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+        </div>
 
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-      </div>
-
+        </div>
     </div>
-  </div>
-</div>
-<!--Bitiş-->
-<!-- Ana Sayfa - Detaylı Bilgi Modal -->
-<div class="modal fade" id="heroInfoModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <h5 class="modal-title">Gemi Acenteliği ve Lojistik Hizmetlerimiz</h5>
-        <button class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-
-      <div class="modal-body">
-        <p class="mb-3">
-          BTR Denizcilik olarak, global denizcilik operasyonlarınızın her aşamasında profesyonel destek sağlıyoruz.
-          Gemi acenteliği, lojistik yönetimi, operasyonel koordinasyon ve liman işlemleri dahil olmak üzere 
-          geniş bir hizmet yelpazesinde çözümler sunuyoruz.
-        </p>
-
-        <h6 class="fw-bold mt-3">Sunduğumuz temel hizmetler:</h6>
-        <ul>
-          <li>Liman Acenteliği ve Resmî işlemler</li>
-          <li>Kargo operasyon yönetimi ve belgelendirme</li>
-          <li>Mürettebat değişim ve destek hizmetleri</li>
-          <li>Teknik destek, bakım ve yedek parça tedariki</li>
-          <li>Römorkaj ve kılavuzluk hizmetleri koordinasyonu</li>
-          <li>7/24 acil durum desteği</li>
-        </ul>
-
-        <p class="mt-3">
-          Profesyonel ekibimizle operasyon süreçlerinizi hızlandırıyor, riskleri azaltıyor 
-          ve her zaman en uygun çözümleri sunuyoruz.
-        </p>
-      </div>
-
-      <div class="modal-footer">
-        <button class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-      </div>
-
     </div>
-  </div>
-</div>
-<!--Bitiş-->
-<!-- Slider 2 - Daha Fazla Modal -->
-<div class="modal fade" id="slider2Modal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content">
+    <!--Bitiş-->
+    <!-- Modal: Yakıt ve Kumanya Tedariği -->
+    <div class="modal fade" id="modalYakitKumanya1" tabindex="-1" aria-labelledby="modalYakitKumanyaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
 
-      <div class="modal-header">
-        <h5 class="modal-title">Global Ticaret ve Lojistik Çözümlerimiz</h5>
-        <button class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
+        <div class="modal-header">
+            <h5 class="modal-title" id="modalYakitKumanyaLabel">Yakıt ve Kumanya Tedariği</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
 
-      <div class="modal-body">
-        <p class="mb-3">
-          Uluslararası ticaretin hızla değişen dünyasında, işletmelerin her adımda güvenilir ve hızlı 
-          çözümlere ihtiyaç duyduğunu biliyoruz. BTR Denizcilik olarak, global lojistik zincirinin 
-          tüm aşamalarında yanınızdayız.
-        </p>
+        <div class="modal-body">
+            <p>
+            Yakıt ve kumanya tedariği hizmetimiz, geminizin operasyonel sürekliliğini sağlamak için
+            tüm ihtiyaçları eksiksiz şekilde karşılar. Güvenilir tedarik zincirimiz sayesinde
+            hızlı, kaliteli ve uygun maliyetli çözümler sunuyoruz.
+            </p>
 
-        <h6 class="fw-bold mt-3">Bu kapsamda sunduğumuz hizmetlerden bazıları:</h6>
-        <ul>
-          <li>Uluslararası yük taşımacılığı koordinasyonu</li>
-          <li>Gümrük ve belgelendirme süreç yönetimi</li>
-          <li>Liman operasyonları ve acentelik desteği</li>
-          <li>Kara, deniz ve çok modlu taşımacılık çözümleri</li>
-          <li>Depolama, dağıtım ve tedarik zinciri optimizasyonu</li>
-          <li>Acil durum ve operasyon merkezi desteği</li>
-        </ul>
+            <ul>
+                <li>IFO, MGO, yağ ve diğer yakıt çeşitlerinin tedariği</li>
+                <li>Taze gıda, içecek ve temel ihtiyaç kumanyalarının temini</li>
+                <li>7/24 liman ve açık deniz teslimatı</li>
+                <li>Kalite kontrol ve sertifikalı ürün garantisi</li>
+                <li>Hızlı operasyon ve kesintisiz iletişim desteği</li>
+            </ul>
+        </div>
 
-        <p class="mt-3">
-          Tek tıkla çözüme ulaşabileceğiniz, hızlı, güvenli ve profesyonel bir lojistik yönetimi için 
-          doğru adrestesiniz. Global rekabette bir adım öne geçmenizi sağlıyoruz.
-        </p>
-      </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+        </div>
 
-      <div class="modal-footer">
-        <button class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-      </div>
-
+        </div>
     </div>
-  </div>
-</div>
-<!--Bitiş-->
+    </div>
+    <!--Bitiş-->
+    <!-- Modal: Gemi Temsil ve Koordinasyon Hizmetleri -->
+    <div class="modal fade" id="modalGemiTemsil1" tabindex="-1" aria-labelledby="modalGemiTemsilLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+        <div class="modal-header">
+            <h5 class="modal-title" id="modalGemiTemsilLabel">Gemi Temsil ve Koordinasyon Hizmetleri</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+            <p>
+            Gemi temsil ve koordinasyon hizmetlerimiz, tüm operasyonel süreçlerin tek elden,
+            profesyonel bir şekilde yönetilmesini sağlar. Liman süreçlerinden resmi işlemlere,
+            operasyon takibinden iletişim koordinasyonuna kadar her aşamada gemi sahipleri
+            ve kaptanlar adına hareket ediyoruz.
+            </p>
+
+            <ul>
+                <li>Liman giriş-çıkış operasyonlarının takibi</li>
+                <li>Resmî kurumlar ile tüm yazışmaların ve izinlerin yönetimi</li>
+                <li>Kargo ve operasyon planlaması koordinasyonu</li>
+                <li>Kaptan ve armatör ile kesintisiz iletişim</li>
+                <li>Gemi ihtiyaçlarının sahada temsil edilmesi</li>
+                <li>Operasyon sonrası raporlama ve bilgilendirme</li>
+            </ul>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Kapat
+            </button>
+        </div>
+
+        </div>
+    </div>
+    </div>
+    <!--Bitiş-->
+    <!-- Modal: Acil Durum ve 7/24 Destek Hizmetleri -->
+    <div class="modal fade" id="modalAcilDestek1" tabindex="-1" aria-labelledby="modalAcilDestekLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+        <div class="modal-header">
+            <h5 class="modal-title" id="modalAcilDestekLabel">Acil Durum ve 7/24 Destek Hizmetleri</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+            <p>
+            Acil durumlarda ve tüm liman operasyon süreçlerinde, anlık müdahale gerektiren her durumda 
+            profesyonel ekibimiz 7 gün 24 saat kesintisiz destek sağlar. Gemi operasyonlarının 
+            sekteye uğramaması için hızlı, güvenilir ve koordineli çözümler sunuyoruz.
+            </p>
+
+            <ul>
+                <li>7/24 çağrı ve acil müdahale desteği</li>
+                <li>Gemi operasyonlarında anlık problem çözümü</li>
+                <li>Liman ve sahadaki acil durum koordinasyonunun sağlanması</li>
+                <li>Kargo operasyonlarında kesinti önleyici hızlı destek</li>
+                <li>Resmi kurumlar ile acil durum iletişimi</li>
+                <li>Acil ikmal, teknik arıza veya personel ihtiyacının karşılanması</li>
+            </ul>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Kapat
+            </button>
+        </div>
+
+        </div>
+    </div>
+    </div>
+    <!--Bitiş-->
+    <!-- Modal: Yedek Parça ve Lojistik Destek -->
+    <div class="modal fade" id="modalYedekParca1" tabindex="-1" aria-labelledby="modalYedekParcaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+        <div class="modal-header">
+            <h5 class="modal-title" id="modalYedekParcaLabel">Yedek Parça ve Lojistik Destek</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+            <p>
+            Gemi operasyonlarınızın kesintisiz devam edebilmesi için ihtiyaç duyulan tüm yedek parçaları, 
+            ekipmanları ve lojistik süreçleri profesyonel şekilde yönetiyoruz. Tedarik, teslimat ve 
+            koordinasyon aşamalarının tamamını hızlı ve güvenilir biçimde sizin adınıza yürütüyoruz.
+            </p>
+
+            <ul>
+                <li>Orijinal ve sertifikalı yedek parça temini</li>
+                <li>Acil yedek parça ihtiyaçlarında hızlı çözüm</li>
+                <li>Global tedarik ağı sayesinde geniş ürün yelpazesi</li>
+                <li>Lojistik ve nakliye sürecinin baştan sona yönetimi</li>
+                <li>Gümrük işlemleri ve gerekli belgelerin hazırlanması</li>
+                <li>Liman içi ve liman dışı teslimat seçenekleri</li>
+            </ul>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+        </div>
+
+        </div>
+    </div>
+    </div>
+    <!--Bitiş-->
+    <!-- Modal: Teknik Destek ve Bakım -->
+    <div class="modal fade" id="modalTeknikDestek1" tabindex="-1" aria-labelledby="modalTeknikDestekLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+        <div class="modal-header">
+            <h5 class="modal-title" id="modalTeknikDestekLabel">Teknik Destek ve Bakım</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+            <p>
+            Gemi ve liman operasyonlarınızda ortaya çıkan tüm teknik ihtiyaçlar için uzman ekibimiz 
+            hızlı ve güvenilir çözümler sunar. Arıza tespiti, bakım, onarım ve teknik koordinasyon süreçlerini 
+            profesyonel şekilde yönetiyoruz.
+            </p>
+
+            <ul>
+                <li>7/24 teknik ekip desteği</li>
+                <li>Mekanik, elektrik ve elektronik arıza çözümleri</li>
+                <li>Acil müdahale ve yerinde servis hizmeti</li>
+                <li>Planlı bakım ve periyodik kontrol hizmetleri</li>
+                <li>Liman içi ve liman dışı teknik operasyon desteği</li>
+                <li>Yedek parça ve ekipman temini ile entegre çalışma</li>
+            </ul>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+        </div>
+
+        </div>
+    </div>
+    </div>
+    <!--Bitiş-->
+    <!-- Ana Sayfa - Detaylı Bilgi Modal -->
+    <div class="modal fade" id="heroInfoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+
+        <div class="modal-header">
+            <h5 class="modal-title">Gemi Acenteliği ve Lojistik Hizmetlerimiz</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+        </div>
+
+        <div class="modal-body">
+            <p>
+            BTR Denizcilik olarak, global denizcilik operasyonlarınızın her aşamasında profesyonel destek sağlıyoruz.
+            Gemi acenteliği, lojistik yönetimi, operasyonel koordinasyon ve liman işlemleri dahil olmak üzere 
+            geniş bir hizmet yelpazesinde çözümler sunuyoruz.
+            </p>
+
+            <h6 class="fw-bold mt-3">Sunduğumuz temel hizmetler:</h6>
+            <ul>
+            <li>Liman Acenteliği ve Resmî işlemler</li>
+            <li>Kargo operasyon yönetimi ve belgelendirme</li>
+            <li>Mürettebat değişim ve destek hizmetleri</li>
+            <li>Teknik destek, bakım ve yedek parça tedariki</li>
+            <li>Römorkaj ve kılavuzluk hizmetleri koordinasyonu</li>
+            <li>7/24 acil durum desteği</li>
+            </ul>
+
+            <p class="mt-3">
+            Profesyonel ekibimizle operasyon süreçlerinizi hızlandırıyor, riskleri azaltıyor 
+            ve her zaman en uygun çözümleri sunuyoruz.
+            </p>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+        </div>
+
+        </div>
+    </div>
+    </div>
+
+    <!-- Slider 2 - Daha Fazla Modal -->
+    <div class="modal fade" id="slider2Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+
+        <div class="modal-header">
+            <h5 class="modal-title">Global Ticaret ve Lojistik Çözümlerimiz</h5>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+            <p class="mb-3">
+            Uluslararası ticaretin hızla değişen dünyasında, işletmelerin her adımda güvenilir ve hızlı 
+            çözümlere ihtiyaç duyduğunu biliyoruz. BTR Denizcilik olarak, global lojistik zincirinin 
+            tüm aşamalarında yanınızdayız.
+            </p>
+
+            <h6 class="fw-bold mt-3">Bu kapsamda sunduğumuz hizmetlerden bazıları:</h6>
+            <ul>
+            <li>Uluslararası yük taşımacılığı koordinasyonu</li>
+            <li>Gümrük ve belgelendirme süreç yönetimi</li>
+            <li>Liman operasyonları ve acentelik desteği</li>
+            <li>Kara, deniz ve çok modlu taşımacılık çözümleri</li>
+            <li>Depolama, dağıtım ve tedarik zinciri optimizasyonu</li>
+            <li>Acil durum ve operasyon merkezi desteği</li>
+            </ul>
+
+            <p class="mt-3">
+            Tek tıkla çözüme ulaşabileceğiniz, hızlı, güvenli ve profesyonel bir lojistik yönetimi için 
+            doğru adrestesiniz. Global rekabette bir adım öne geçmenizi sağlıyoruz.
+            </p>
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+        </div>
+
+        </div>
+    </div>
+    </div>
+    <!--Bitiş-->
 
 
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('duyuru-listesi');
-    container.innerHTML = '';
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const container = document.getElementById('duyuru-listesi');
+        container.innerHTML = '';
 
-    fetch('http://localhost:1337/api/duyurular?populate=media&sort=date:desc')
-        .then(res => {
-            if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-            return res.json();
-        })
-        .then(data => {
-            if (!data.data || data.data.length === 0) {
-                container.innerHTML = '<div class="col-12 text-center py-5"><p class="text-muted">Duyuru bulunamadı.</p></div>';
-                return;
-            }
+        fetch('http://localhost:1337/api/duyurular?populate=media&sort=date:desc')
+            .then(res => {
+                if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+                return res.json();
+            })
+            .then(data => {
+                if (!data.data || data.data.length === 0) {
+                    container.innerHTML = '<div class="col-12 text-center py-5"><p class="text-muted">Duyuru bulunamadı.</p></div>';
+                    return;
+                }
 
-            data.data.slice(0, 3).forEach(item => {
-                const title = item.title;
-                const contentText = item.content[0]?.children[0]?.text || '';
-                const dateString = item.date 
-                    ? new Date(item.date).toLocaleDateString('tr-TR', { day: '2-digit', month: 'long', year: 'numeric' }) 
-                    : 'Tarih Yok';
+                data.data.slice(0, 3).forEach(item => {
+                    const title = item.title;
+                    const contentText = item.content[0]?.children[0]?.text || '';
+                    const dateString = item.date 
+                        ? new Date(item.date).toLocaleDateString('tr-TR', { day: '2-digit', month: 'long', year: 'numeric' }) 
+                        : 'Tarih Yok';
 
-                const div = document.createElement('div');
-                div.className = 'col-lg-4 col-md-6 wow fadeInUp';
-                div.setAttribute('data-wow-delay', '0.3s');
+                    const div = document.createElement('div');
+                    div.className = 'col-lg-4 col-md-6 wow fadeInUp';
+                    div.setAttribute('data-wow-delay', '0.3s');
 
-                div.innerHTML = `
-                    <div class="service-item p-4" data-id="${item.id}" style="cursor:pointer;">
-                        <h5 class="mb-2">${title}</h5>
-                        <p>${contentText}</p>
-                        <small class="text-primary">${dateString}</small>
-                    </div>
-                `;
-                container.appendChild(div);
+                    div.innerHTML = `
+                        <div class="service-item p-4" data-id="${item.id}" style="cursor:pointer;">
+                            <h5 class="mb-2">${title}</h5>
+                            <p>${contentText}</p>
+                            <small class="text-primary">${dateString}</small>
+                        </div>
+                    `;
+                    container.appendChild(div);
 
-                // Tıklayınca modal aç
-                div.querySelector('.service-item').addEventListener('click', () => {
-                    let contentHTML = `<h5>${title}</h5><p>${contentText}</p>`;
+                    // Tıklayınca modal aç
+                    div.querySelector('.service-item').addEventListener('click', () => {
+                        let contentHTML = `<h5>${title}</h5><p>${contentText}</p>`;
 
                     // Media varsa ekle
                     if (item.media && item.media.length > 0) {
@@ -1515,49 +1455,50 @@ new Chart(document.getElementById('pieChart'), {
 
 
 <script>
-// Modal ve form
-const modal = document.getElementById('orderModal');
-const orderForm = document.getElementById('orderForm');
-const paketInput = document.getElementById('paket');
-const orderButtons = document.querySelectorAll('.order-btn');
+document.addEventListener('DOMContentLoaded', () => {
+  const orderForm = document.getElementById('orderForm');
+  const paketInput = document.getElementById('paket');
+  const orderButtons = document.querySelectorAll('.order-btn');
 
-// Sipariş Ver butonuna tıklayınca modal aç
-orderButtons.forEach(btn => {
+  // Bootstrap modal objesi
+  const orderModalEl = document.getElementById('orderModal');
+  const orderModal = new bootstrap.Modal(orderModalEl);
+
+  // Sipariş Ver butonlarına tıklandığında modal aç ve paket değerini at
+  orderButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-        paketInput.value = btn.dataset.id === "1" ? "Bronze" :
-                           btn.dataset.id === "2" ? "Silver" : "Gold";
-        modal.style.display = 'flex';
+      paketInput.value = btn.dataset.id === "1" ? "Bronze" :
+                         btn.dataset.id === "2" ? "Silver" : "Gold";
+      orderModal.show();
     });
-});
+  });
 
-// Modal kapatma fonksiyonu
-function closeModal() { modal.style.display = 'none'; }
-
-// Form submit → Strapi API
-orderForm.addEventListener('submit', async (e) => {
+  // Form submit → Strapi API
+  orderForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const formData = new FormData(orderForm);
     const data = {};
     formData.forEach((value, key) => data[key] = value);
 
     try {
-        const response = await fetch('http://localhost:1337/api/orders', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ data })
-        });
+      const response = await fetch('http://localhost:1337/api/orders', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ data })
+      });
 
-        if (response.ok) {
-            alert('Siparişiniz başarıyla alındı!');
-            orderForm.reset();
-            closeModal();
-        } else {
-            alert('Sipariş gönderilemedi!');
-        }
+      if (response.ok) {
+        alert('Siparişiniz başarıyla alındı! BTR-Shipping sizinle iletişime geçecektir.');
+        orderForm.reset();
+        orderModal.hide();
+      } else {
+        alert('Sipariş gönderilemedi!');
+      }
     } catch (err) {
-        console.error(err);
-        alert('Bir hata oluştu!');
+      console.error(err);
+      alert('Bir hata oluştu!');
     }
+  });
 });
 </script>
 
