@@ -532,34 +532,29 @@ export interface ApiMessageMessage extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiPackagePackage extends Struct.CollectionTypeSchema {
-  collectionName: 'packages';
+export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
+  collectionName: 'orders';
   info: {
-    displayName: 'package';
-    pluralName: 'packages';
-    singularName: 'package';
+    displayName: 'order';
+    pluralName: 'orders';
+    singularName: 'order';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
+    ad: Schema.Attribute.String;
+    adres: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Blocks;
-    Enumeration: Schema.Attribute.Enumeration<['Bronze', 'Silver', 'Gold']>;
-    features: Schema.Attribute.JSON;
+    email: Schema.Attribute.Email;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::package.package'
-    > &
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::order.order'> &
       Schema.Attribute.Private;
-    price: Schema.Attribute.String;
+    paket: Schema.Attribute.Enumeration<['Bronze', 'Silver', 'Gold']>;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID;
-    subtitle: Schema.Attribute.String;
-    title: Schema.Attribute.String;
+    telefon: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1079,7 +1074,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::duyuru.duyuru': ApiDuyuruDuyuru;
       'api::message.message': ApiMessageMessage;
-      'api::package.package': ApiPackagePackage;
+      'api::order.order': ApiOrderOrder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

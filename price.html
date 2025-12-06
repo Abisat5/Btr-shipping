@@ -105,7 +105,9 @@
                             <p><i class="fa fa-check text-success me-3"></i>Liman Giriş/Çıkış İzinleri</p>
                             <p><i class="fa fa-check text-success me-3"></i>Hazırlanması ve Takibi</p>
                             <p><i class="fa fa-check text-success me-3"></i>Normal Çalışma Saatleri Desteği</p>
-                            <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Teklif alın</span></a>
+                            <a class="btn-slide mt-2 order-btn" data-id="1">
+                                <i class="fa fa-arrow-right"></i><span>Sipariş Ver</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -125,7 +127,9 @@
                             <p><i class="fa fa-check text-success me-3"></i>7/24 Operasyonel İletişim ve Raporlama</p>
                             <p><i class="fa fa-check text-success me-3"></i>Kumanya ve Yakıt (Bunker) Bağlantısı</p>
                             <p><i class="fa fa-check text-success me-3"></i>Gümrük Dokümantasyonu Desteği</p>
-                            <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Teklif Alın</span></a>
+                            <a class="btn-slide mt-2 order-btn" data-id="2">
+                                <i class="fa fa-arrow-right"></i><span>Sipariş Ver</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -145,13 +149,101 @@
                             <p><i class="fa fa-check text-success me-3"></i>7/24 Acil Durum Yönetimi ve Öncelikli İletişim</p>
                             <p><i class="fa fa-check text-success me-3"></i>Kumanya/Yakıt Tedariki + Yedek Parça Lojistiği</p>
                             <p><i class="fa fa-check text-success me-3"></i>Mürettebat Değişimi Organizasyonu</p>
-                            <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Teklif Alın</span></a>
+                            <a class="btn-slide mt-2 order-btn" data-id="3">
+                                <i class="fa fa-arrow-right"></i><span>Sipariş Ver</span>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div id="orderModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3>Sipariş Bilgileri</h3>
+        <form id="orderForm">
+            <input type="text" name="ad" placeholder="Adınız" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="telefon" placeholder="Telefon" required>
+            <input type="text" name="adres" placeholder="Adres" required>
+            <input type="hidden" name="paket" id="paket">
+            <button type="submit" class="submit-btn">Siparişi Gönder</button>
+        </form>
+    </div>
+</div>
+
+<style>
+/* Modal arka plan */
+.modal {
+    display: none; /* Başlangıçta gizli */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s;
+}
+
+/* Modal kutusu */
+.modal-content {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: slideDown 0.4s;
+}
+
+/* Close butonu */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.2s;
+}
+.close:hover { color: #ff4b5c; }
+
+.modal-content h3 { text-align: center; margin-bottom: 20px; color: #007bff; }
+
+.modal-content input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border 0.2s;
+}
+.modal-content input:focus { border-color: #007bff; outline: none; }
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+.submit-btn:hover { background: #0056b3; transform: translateY(-2px); }
+
+/* Animasyonlar */
+@keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+@keyframes slideDown { from {transform: translateY(-50px); opacity:0;} to {transform: translateY(0); opacity:1;} }
+</style>
     <!-- Pricing End -->
 
 
@@ -221,6 +313,59 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+    <script>
+// Modal ve form
+const modal = document.getElementById('orderModal');
+const orderForm = document.getElementById('orderForm');
+const paketInput = document.getElementById('paket');
+const orderButtons = document.querySelectorAll('.order-btn');
+
+// Sipariş Ver butonuna tıklayınca modal aç
+orderButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        paketInput.value = btn.dataset.id === "1" ? "Bronze" :
+                           btn.dataset.id === "2" ? "Silver" : "Gold";
+        modal.style.display = 'flex';
+    });
+});
+
+// Modal kapatma fonksiyonu
+function closeModal() { modal.style.display = 'none'; }
+
+// Form submit → Strapi API
+orderForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(orderForm);
+    const data = {};
+    formData.forEach((value, key) => data[key] = value);
+
+    try {
+        const response = await fetch('http://localhost:1337/api/orders', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ data })
+        });
+
+        if (response.ok) {
+            alert('Siparişiniz başarıyla alındı!');
+            orderForm.reset();
+            closeModal();
+        } else {
+            alert('Sipariş gönderilemedi!');
+        }
+    } catch (err) {
+        console.error(err);
+        alert('Bir hata oluştu!');
+    }
+});
+</script>
+
+
+
+
+
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
