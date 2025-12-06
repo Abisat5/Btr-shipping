@@ -22,6 +22,7 @@
     <link href="./css/style.css" rel="stylesheet">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <!--Navbar-->
 <body>
@@ -362,12 +363,13 @@
             </div>
         </div>
     </div>
+
     <!--Vizyonumuz-->
     <div class="container-fluid overflow-hidden py-5 px-lg-0">
     <div class="container feature py-5 px-lg-0">
         <div class="row g-5 mx-lg-0">
 
-            <!-- Sol taraf (metin) -->
+           
             <div class="col-lg-6 feature-text wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="text-secondary text-uppercase mb-3">Vizyonumuz</h6>
                 <h1 class="mb-5">Denizcilik ve lojistik sektöründe yenilikçi, güvenilir ve lider bir çözüm ortağı olmak.</h1>
@@ -403,7 +405,7 @@
                 </div>
             </div>
 
-            <!-- Sağ taraf (fotoğraf) -->
+            
             <div class="col-lg-6 pe-lg-0 wow fadeInLeft" data-wow-delay="0.1s" style="min-height: 400px;">
                 <div class="position-relative h-100">
                     <img class="position-absolute img-fluid w-100 h-100" src="img/vizyon.jpg" style="object-fit: cover;" alt="Vizyonumuz">
@@ -414,6 +416,7 @@
     </div>
 </div>
 <!--Vizyon Bitiş-->
+
     <div class="container-xxl py-5">
         <div class="container py-5">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -488,6 +491,7 @@
             </div>
         </div>
     </div>
+
     <!-- Order Modal -->
 <div class="modal fade" id="orderModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -513,9 +517,6 @@
   </div>
 </div>
 
-
-
-    
     <div class="container-xxl py-5">
         <div class="container py-5">
             <div class="row g-5">
@@ -559,7 +560,6 @@
     </div>
 
 
-    <!-- SAYILARLA BTR DENİZCİLİK -->
 <!-- İstatistik Kartları -->
 <div style="padding: 60px; background:#f4f7fc;">
     <div style="
@@ -653,7 +653,6 @@
         font-weight:600;
     }
 </style>
-
 
 <div class="container-xxl py-5">
     <div class="container py-5">
@@ -1007,7 +1006,6 @@
         <script src="js/main.js"></script>
         
     <div class="row" id="duyuru-listesi">
-    <!-- Duyurular JS ile buraya yüklenecek -->
     </div>
 
     <!-- Modal -->
@@ -1433,8 +1431,6 @@
     </div>
     <!--Bitiş-->
 
-
-
     <script>
     document.addEventListener('DOMContentLoaded', () => {
         const container = document.getElementById('duyuru-listesi');
@@ -1471,11 +1467,11 @@
                     `;
                     container.appendChild(div);
 
-                    // Tıklayınca modal aç
+
                     div.querySelector('.service-item').addEventListener('click', () => {
                         let contentHTML = `<h5>${title}</h5><p>${contentText}</p>`;
 
-                    // Media varsa ekle
+
                     if (item.media && item.media.length > 0) {
                         item.media.forEach(file => {
                             const fileUrl = "http://localhost:1337" + file.url;
@@ -1567,11 +1563,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const paketInput = document.getElementById('paket');
   const orderButtons = document.querySelectorAll('.order-btn');
 
-  // Bootstrap modal objesi
+
   const orderModalEl = document.getElementById('orderModal');
   const orderModal = new bootstrap.Modal(orderModalEl);
 
-  // Sipariş Ver butonlarına tıklandığında modal aç ve paket değerini at
+
   orderButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       paketInput.value = btn.dataset.id === "1" ? "Bronze" :
@@ -1580,7 +1576,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Form submit → Strapi API
+
   orderForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const formData = new FormData(orderForm);
@@ -1608,17 +1604,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-
-
-
-
-
-
-
-
-
-
-
     </body>
 
 </html>
