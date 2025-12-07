@@ -174,7 +174,7 @@
 <style>
 /* Modal arka plan */
 .modal {
-    display: none; /* Başlangıçta gizli */
+    display: none; 
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -317,13 +317,13 @@
 
 
     <script>
-// Modal ve form
+
 const modal = document.getElementById('orderModal');
 const orderForm = document.getElementById('orderForm');
 const paketInput = document.getElementById('paket');
 const orderButtons = document.querySelectorAll('.order-btn');
 
-// Sipariş Ver butonuna tıklayınca modal aç
+
 orderButtons.forEach(btn => {
     btn.addEventListener('click', () => {
         paketInput.value = btn.dataset.id === "1" ? "Bronze" :
@@ -332,10 +332,10 @@ orderButtons.forEach(btn => {
     });
 });
 
-// Modal kapatma fonksiyonu
+
 function closeModal() { modal.style.display = 'none'; }
 
-// Form submit → Strapi API
+
 orderForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const formData = new FormData(orderForm);
@@ -368,7 +368,7 @@ orderForm.addEventListener('submit', async (e) => {
 
 
 
-    <!-- Template Javascript -->
+
     <script src="js/main.js"></script>
 </body>
 
